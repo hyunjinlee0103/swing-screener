@@ -252,10 +252,13 @@ def main():
         results.append(entry)
         time.sleep(DELAY_SEC)
 
-    # Top10 선정 및 뉴스 조회
+    # Top10 선정: 화면 표시 기준과 동일 (충족 기준 수 내림차순, 거래대금 내림차순)
     qualified = [s for s in results if all(s[k] for k in QUANT_KEYS)]
-    qualified.sort(key=lambda s: s["trade_amount_20d"] or 0, reverse=True)
-    top10_codes = {s["code"] for s in qualified[:10]}
+    results_sorted = sorted(
+        results,
+        key=lambda s: (-sum(1 for k in QUANT_KEYS if s.get(k)), -(s["trade_amount_20d"] or 0))
+    )
+    top10_codes = {s["code"] for s in results_sorted[:10]}
 
     log.info(f"6기준 충족: {len(qualified)}개 — Top10 뉴스 조회 중...")
     for s in results:

@@ -422,7 +422,7 @@ async function renderTop10() {
         <tr>
           <th>#</th>
           <th>종목 · 업종</th>
-          <th>현재가 / MA60</th>
+          <th>현재가 / 최근60일 평균주가</th>
           <th>눌림폭 / 거래대금</th>
           <th>기준 충족 여부</th>
           <th>뉴스</th>
@@ -431,7 +431,10 @@ async function renderTop10() {
       <tbody>${rows}</tbody>
     </table>
     <div style="margin-top:12px;font-size:11.5px;color:var(--text-dim);">
-      전체 ${data.stocks.length}개 종목 · 6기준 전부 충족: <strong style="color:var(--text);">${allPass}개</strong> · 충족 기준 많은 순 상위 10개 표시
+      전체 ${data.stocks.length}개 종목 · 6기준 전부 충족: <strong style="color:var(--text);">${allPass}개</strong>
+    </div>
+    <div style="margin-top:6px;font-size:11.5px;color:var(--text-dim);line-height:1.6;">
+      충족한 기준 개수가 많은 순으로 정렬하며, 개수가 같을 경우 거래대금이 큰 종목을 우선 표시합니다.
     </div>`;
 }
 

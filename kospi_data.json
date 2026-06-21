@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21 16:48:23",
+  "updated_at": "2026-06-21 20:00:52",
   "kospi_ret_20d": 15.83,
   "stocks": [
     {
@@ -18,7 +18,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "000660",
@@ -54,7 +55,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "005935",
@@ -72,7 +74,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "009150",
@@ -90,7 +93,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "005380",
@@ -108,7 +112,8 @@
       "pullback": true,
       "volume_dry": true,
       "sector_strong": false,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "032830",
@@ -162,7 +167,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "329180",
@@ -180,7 +186,8 @@
       "pullback": true,
       "volume_dry": true,
       "sector_strong": false,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "207940",
@@ -594,7 +601,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "000150",
@@ -2647,23 +2655,7 @@
       "volume_dry": true,
       "sector_strong": true,
       "large_cap": true,
-      "news": [
-        {
-          "title": "9000피 뚫은 K증시의 역설…상장 종목 과반, 1년 전보다 주가 하락",
-          "link": "https://www.ziksir.com/news/articleView.html?idxno=137463",
-          "pubDate": "Sun, 21 Jun 2026 06:00:00 +0900"
-        },
-        {
-          "title": "[거래소 기관] AI 반도체 사고 전력·조선 팔았다…수급 변화 주목",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461610",
-          "pubDate": "Fri, 19 Jun 2026 16:12:00 +0900"
-        },
-        {
-          "title": "AI 데이터센터 한계 깬다…SK하이닉스, 차세대 CXL 기술로 초격차",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461124",
-          "pubDate": "Thu, 18 Jun 2026 10:34:00 +0900"
-        }
-      ]
+      "news": []
     },
     {
       "code": "279570",
@@ -3149,7 +3141,8 @@
       "pullback": true,
       "volume_dry": false,
       "sector_strong": true,
-      "large_cap": true
+      "large_cap": true,
+      "news": []
     },
     {
       "code": "00680K",
