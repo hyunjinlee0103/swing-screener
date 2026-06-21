@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스윙 스크리너 · 국내주식 체크리스트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E14;
+    --panel:#131926;
+    --panel-2:#1A2233;
+    --border:#262F42;
+    --text:#E8EAED;
+    --text-dim:#7C8AA0;
+    --up:#FF4D6D;
+    --down:#3E8DFF;
+    --gold:#E8B339;
+    --gold-dim:#8A6E2E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Noto Sans KR',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 18px 60px;}
+
+  /* ticker */
+  .ticker{overflow:hidden;white-space:nowrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--panel);padding:7px 0;margin-bottom:26px;}
+  .ticker-inner{display:inline-block;padding-left:100%;animation:ticker 22s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.04em;color:var(--text-dim);}
+  .ticker-inner span{margin-right:36px;}
+  .ticker-inner span.hl{color:var(--up);}
+  @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+  @media(prefers-reduced-motion:reduce){.ticker-inner{animation:none;padding-left:0;}}
+
+  header.top{margin-bottom:20px;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+  h1{font-size:26px;font-weight:900;margin:0 0 8px;letter-spacing:-0.01em;}
+  .sub{color:var(--text-dim);font-size:14px;line-height:1.6;max-width:560px;}
+
+  .disclaimer{border:1px solid var(--border);border-left:3px solid var(--down);background:var(--panel);padding:12px 14px;font-size:12.5px;color:var(--text-dim);line-height:1.6;border-radius:2px;margin-bottom:24px;}
+
+  /* tab nav */
+  .tab-nav{display:flex;gap:4px;margin-bottom:22px;border-bottom:1px solid var(--border);padding-bottom:0;}
+  .tab-btn{
+    padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;
+    background:none;border:none;color:var(--text-dim);
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+    font-family:'Noto Sans KR',sans-serif;transition:color .12s;
+  }
+  .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+  .tab-btn:hover:not(.active){color:var(--text);}
+
+  .tab-pane{display:none;}
+  .tab-pane.active{display:block;}
+
+  /* checklist layout */
+  .grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:18px;}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+
+  .panel{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:20px;}
+  .panel h2{font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-dim);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+  .panel h2::before{content:'';width:6px;height:6px;background:var(--gold);display:inline-block;}
+
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;color:var(--text-dim);margin-bottom:5px;}
+  .field input{width:100%;background:var(--panel-2);border:1px solid var(--border);color:var(--text);padding:9px 10px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:14px;}
+  .field input:focus{outline:2px solid var(--gold-dim);outline-offset:1px;}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+
+  .rr-box{margin-top:6px;padding:10px 12px;background:var(--panel-2);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;display:flex;justify-content:space-between;}
+  .rr-box .val{font-weight:700;}
+  .rr-good{color:var(--up);}
+  .rr-bad{color:var(--down);}
+
+  /* autofill bar */
+  .autofill-bar{
+    display:flex;gap:8px;align-items:center;margin-bottom:14px;
+    background:var(--panel-2);border:1px solid var(--border);border-radius:4px;padding:8px 10px;
+  }
+  .autofill-bar input{
+    flex:1;background:transparent;border:none;color:var(--text);
+    font-family:'JetBrains Mono',monospace;font-size:13px;outline:none;
+  }
+  .autofill-bar input::placeholder{color:var(--text-dim);}
+  .autofill-btn{
+    padding:5px 12px;background:var(--gold);color:#1A1300;border:none;border-radius:3px;
+    font-size:12px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;
+  }
+  .autofill-btn:hover{background:#f0c34d;}
+  .autofill-status{font-size:11.5px;color:var(--text-dim);margin-bottom:10px;min-height:16px;}
+
+  .crit-list{display:flex;flex-direction:column;gap:0;}
+  .crit{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+  .crit:last-child{border-bottom:none;}
+  .crit .box{flex:none;width:20px;height:20px;margin-top:2px;border:1.5px solid var(--text-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;color:transparent;transition:all .12s ease;}
+  .crit.on .box{border-color:var(--up);background:var(--up);color:#0B0E14;}
+  .crit.auto-filled .box{border-color:var(--gold);background:var(--gold);color:#1A1300;}
+  .crit .body{flex:1;}
+  .crit .name{font-size:13.5px;font-weight:500;margin-bottom:2px;}
+  .crit .desc{font-size:11.5px;color:var(--text-dim);line-height:1.5;}
+  .crit .auto-val{font-size:11px;color:var(--gold);margin-top:3px;}
+
+  /* score gauge */
+  .score-wrap{text-align:center;padding:6px 0 18px;}
+  .score-num{font-family:'JetBrains Mono',monospace;font-size:46px;font-weight:700;line-height:1;}
+  .score-num span{font-size:18px;color:var(--text-dim);}
+  .verdict{margin-top:10px;display:inline-block;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.03em;}
+  .v-good{background:rgba(255,77,109,0.14);color:var(--up);border:1px solid rgba(255,77,109,0.4);}
+  .v-mid{background:rgba(232,179,57,0.14);color:var(--gold);border:1px solid rgba(232,179,57,0.4);}
+  .v-bad{background:rgba(62,141,255,0.14);color:var(--down);border:1px solid rgba(62,141,255,0.4);}
+
+  .save-btn{width:100%;margin-top:14px;padding:11px;background:var(--gold);color:#1A1300;border:none;border-radius:4px;font-weight:700;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+  .save-btn:hover{background:#f0c34d;}
+  .save-btn:disabled{background:var(--panel-2);color:var(--text-dim);cursor:not-allowed;}
+
+  .hist{margin-top:30px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.05em;color:var(--text-dim);text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--border);}
+  td{padding:9px 10px;border-bottom:1px solid var(--border);}
+  td.mono{font-family:'JetBrains Mono',monospace;}
+  .empty-row td{color:var(--text-dim);text-align:center;padding:24px 0;font-size:12.5px;}
+  .del{cursor:pointer;color:var(--text-dim);font-size:11px;}
+  .del:hover{color:var(--up);}
+  .clear-btn{background:none;border:1px solid var(--border);color:var(--text-dim);padding:5px 10px;border-radius:4px;font-size:11px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+  .clear-btn:hover{border-color:var(--down);color:var(--down);}
+  .hist-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+
+  /* top10 tab */
+  .top10-panel{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:24px;}
+  .top10-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:10px;}
+  .top10-head h2{font-size:15px;font-weight:700;margin:0;}
+  .updated-at{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);}
+  .trigger-notice{
+    display:flex;align-items:flex-start;gap:10px;
+    background:var(--panel-2);border:1px solid var(--border);border-left:3px solid var(--gold);
+    padding:10px 14px;border-radius:3px;font-size:12.5px;color:var(--text-dim);
+    line-height:1.6;margin-bottom:18px;
+  }
+  .trigger-notice .icon{color:var(--gold);font-size:16px;line-height:1.4;flex:none;}
+
+  .top10-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .top10-table th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.05em;color:var(--text-dim);text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  .top10-table td{padding:10px 10px;border-bottom:1px solid var(--border);vertical-align:middle;}
+  .top10-table td.mono{font-family:'JetBrains Mono',monospace;}
+  .top10-table tr:last-child td{border-bottom:none;}
+  .top10-table tr:hover td{background:var(--panel-2);}
+
+  .badge{display:inline-block;padding:2px 7px;border-radius:3px;font-size:10.5px;font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .badge-ok{background:rgba(255,77,109,0.15);color:var(--up);}
+  .badge-no{background:rgba(62,141,255,0.10);color:var(--down);}
+  .badge-warn{background:rgba(232,179,57,0.15);color:var(--gold);}
+
+  .rank-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);width:24px;display:inline-block;text-align:right;}
+
+  .loading-msg{color:var(--text-dim);font-size:13px;padding:30px 0;text-align:center;}
+  .err-msg{color:var(--down);font-size:13px;padding:20px 0;text-align:center;}
+
+  .criteria-icons{display:flex;gap:4px;flex-wrap:wrap;}
+  .ci{width:18px;height:18px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;}
+  .ci-ok{background:rgba(255,77,109,0.2);color:var(--up);}
+  .ci-no{background:rgba(62,141,255,0.12);color:var(--down);}
+
+  .price-cell{font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+  .amount-cell{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-dim);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="ticker"><div class="ticker-inner mono" id="tickerInner"></div></div>
+
+  <header class="top">
+    <div class="eyebrow">SWING SCREENER</div>
+    <h1>국내주식 스윙매매 체크리스트</h1>
+    <p class="sub">코스피 전 종목 자동 스크리닝 + 개별 종목 체크리스트를 한 화면에서 확인하세요.</p>
+  </header>
+
+  <div class="disclaimer">
+    이 도구는 투자 추천이 아니라 스스로 정한 기준을 일관되게 점검하기 위한 참고용 체크리스트입니다. 점수가 높다고 수익을 보장하지 않으며, 매매 판단과 책임은 본인에게 있습니다.
+  </div>
+
+  <!-- 탭 네비게이션 -->
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="top10">오늘의 Top 10</button>
+    <button class="tab-btn" data-tab="checklist">개별 종목 체크리스트</button>
+  </div>
+
+  <!-- ======================== TOP 10 탭 ======================== -->
+  <div class="tab-pane active" id="tab-top10">
+    <div class="top10-panel">
+      <div class="top10-head">
+        <h2>오늘의 스윙 후보 Top 10</h2>
+        <span class="updated-at" id="updatedAt">데이터 로딩 중...</span>
+      </div>
+
+      <div class="trigger-notice">
+        <span class="icon">⚠</span>
+        <div>
+          아래 종목들은 <strong>6개 정량 기준</strong>을 모두 충족합니다.
+          단, <strong>명확한 트리거(실적·신제품·정책 수혜 등)</strong>는 정성적 판단이 필요하므로
+          HTS·뉴스·공시를 통해 <strong>직접 확인</strong>하신 후 진입 여부를 결정하세요.
+        </div>
+      </div>
+
+      <div id="top10Container">
+        <div class="loading-msg">kospi_data.json 로딩 중...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== CHECKLIST 탭 ======================== -->
+  <div class="tab-pane" id="tab-checklist">
+    <div class="grid">
+      <div class="panel">
+        <h2>종목 입력</h2>
+
+        <!-- 자동 채우기 -->
+        <div style="margin-bottom:6px;">
+          <div style="font-size:11.5px;color:var(--text-dim);margin-bottom:6px;">
+            종목코드 입력 시 kospi_data.json에서 6개 기준을 자동으로 불러옵니다.
+          </div>
+          <div class="autofill-bar">
+            <input type="text" id="autoCodeInput" placeholder="종목코드 입력 (예: 005930)" maxlength="6">
+            <button class="autofill-btn" id="autoFillBtn">자동 채우기</button>
+          </div>
+          <div class="autofill-status" id="autoFillStatus"></div>
+        </div>
+
+        <div class="field">
+          <label>종목명 / 코드</label>
+          <input id="stockName" type="text" placeholder="예: OOO전자 (005xxx)">
+        </div>
+        <div class="row3">
+          <div class="field">
+            <label>매수 예정가</label>
+            <input id="buyPrice" type="number" inputmode="decimal" placeholder="0">
+          </div>
+          <div class="field">
+            <label>손절가</label>
+            <input id="stopPrice" type="number" inputmode="decimal" placeholder="0">
+          </div>
+          <div class="field">
+            <label>목표가</label>
+            <input id="targetPrice" type="number" inputmode="decimal" placeholder="0">
+          </div>
+        </div>
+        <div class="rr-box">
+          <span>손익비 (R:R)</span>
+          <span class="val mono" id="rrVal">—</span>
+        </div>
+
+        <h2 style="margin-top:24px;">기준 체크 (7개)</h2>
+        <div class="crit-list" id="critList"></div>
+      </div>
+
+      <div class="panel">
+        <h2>결과</h2>
+        <div class="score-wrap">
+          <div class="score-num"><span id="scoreVal">0</span><span> / 7</span></div>
+          <div id="verdictBadge" class="verdict v-bad">기준 입력 대기</div>
+        </div>
+        <button class="save-btn" id="saveBtn" disabled>이 평가 기록 저장</button>
+
+        <div class="hist">
+          <div class="hist-head">
+            <h2 style="margin:0;">평가 기록</h2>
+            <button class="clear-btn" id="clearBtn">전체 삭제</button>
+          </div>
+          <table>
+            <thead>
+              <tr><th>날짜</th><th>종목</th><th>점수</th><th>R:R</th><th>판정</th><th></th></tr>
+            </thead>
+            <tbody id="histBody">
+              <tr class="empty-row"><td colspan="6">아직 저장된 기록이 없습니다</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+// ============================================================
+// 공통 데이터
+// ============================================================
+const CRITERIA = [
+  {id:'liq',      name:'거래대금',     desc:'일평균 거래대금이 충분한가 (대략 50억원 이상 — 부족하면 슬리피지·스프레드 위험)', dataKey:'enough_liquidity'},
+  {id:'vol',      name:'변동성',       desc:'최근 일중 변동폭이 스윙에 적합한가 (평균 3% 이상)',                               dataKey:'enough_volatility'},
+  {id:'trend',    name:'추세',         desc:'20일선 / 60일선 위에서 거래되고 있는가',                                           dataKey:'above_ma'},
+  {id:'volconf',  name:'거래량 동반',  desc:'상승할 때 거래량이 평소보다 늘었는가 (매수세 유입 신호)',                          dataKey:'volume_on_up'},
+  {id:'sector',   name:'상대강도(RS)', desc:'최근 20일 수익률이 KOSPI 지수보다 높은가 (자동 계산: 개별 종목 상대강도)',         dataKey:'sector_strong'},
+  {id:'trigger',  name:'명확한 트리거', desc:'실적, 신제품, 정책 수혜 등 상승 이유가 뚜렷한가 — HTS·뉴스에서 직접 확인 필요',  dataKey:null},
+  {id:'cap',      name:'시가총액',     desc:'너무 작지 않은가 (1,000억원 이상이면 작전주 리스크 감소)',                         dataKey:'large_cap'},
+];
+
+// ============================================================
+// 탭 전환
+// ============================================================
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ============================================================
+// TOP 10 탭
+// ============================================================
+let kospiData = null;
+
+async function loadKospiData() {
+  if (kospiData) return kospiData;
+  try {
+    const res = await fetch('kospi_data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    kospiData = await res.json();
+    return kospiData;
+  } catch(e) {
+    return null;
+  }
+}
+
+function fmt억(won) {
+  if (won == null) return '—';
+  const 억 = won / 1e8;
+  return 억 >= 10000
+    ? (억 / 10000).toFixed(1) + '조'
+    : Math.round(억).toLocaleString() + '억';
+}
+
+function fmtPrice(p) {
+  if (p == null) return '—';
+  return Math.round(p).toLocaleString() + '원';
+}
+
+async function renderTop10() {
+  const container = document.getElementById('top10Container');
+  const updatedAt = document.getElementById('updatedAt');
+
+  const data = await loadKospiData();
+  if (!data) {
+    container.innerHTML = '<div class="err-msg">kospi_data.json을 불러오지 못했습니다.<br>GitHub Actions가 아직 실행되지 않았거나 배포 전일 수 있습니다.</div>';
+    updatedAt.textContent = '';
+    return;
+  }
+
+  updatedAt.textContent = '업데이트: ' + (data.updated_at || '—');
+
+  const QUANT_KEYS = ['enough_liquidity','enough_volatility','above_ma','volume_on_up','sector_strong','large_cap'];
+  const qualified = data.stocks.filter(s => QUANT_KEYS.every(k => s[k] === true));
+  const top10 = qualified
+    .sort((a,b) => (b.trade_amount_20d||0) - (a.trade_amount_20d||0))
+    .slice(0, 10);
+
+  if (!top10.length) {
+    container.innerHTML = '<div class="loading-msg">오늘은 6개 기준을 모두 충족하는 종목이 없습니다.</div>';
+    return;
+  }
+
+  const CRIT_LABELS = [
+    {key:'enough_liquidity', label:'거래대금'},
+    {key:'enough_volatility',label:'변동성'},
+    {key:'above_ma',         label:'MA위'},
+    {key:'volume_on_up',     label:'거래량'},
+    {key:'sector_strong',    label:'업종'},
+    {key:'large_cap',        label:'시총'},
+  ];
+
+  const rows = top10.map((s, i) => {
+    const icons = CRIT_LABELS.map(c =>
+      `<span class="ci ${s[c.key] ? 'ci-ok' : 'ci-no'}" title="${c.label}">${s[c.key] ? '✓' : '✗'}</span>`
+    ).join('');
+
+    return `<tr>
+      <td><span class="rank-num">${i+1}</span></td>
+      <td>
+        <div style="font-weight:500;font-size:13px;">${s.name}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);">${s.code}</div>
+      </td>
+      <td class="price-cell">${fmtPrice(s.current_price)}</td>
+      <td class="amount-cell">${fmt억(s.trade_amount_20d)}</td>
+      <td>
+        <div style="font-size:11.5px;color:var(--text-dim);">${s.sector||'—'}</div>
+      </td>
+      <td><div class="criteria-icons">${icons}</div></td>
+      <td><span class="badge badge-warn">직접 확인 필요</span></td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `
+    <table class="top10-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>종목</th>
+          <th>현재가</th>
+          <th>거래대금(20일평균)</th>
+          <th>업종</th>
+          <th>6개 기준</th>
+          <th>트리거</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div style="margin-top:12px;font-size:11.5px;color:var(--text-dim);">
+      전체 ${data.stocks.length}개 종목 중 6개 기준 충족: <strong style="color:var(--text);">${qualified.length}개</strong> · 상위 10개 표시
+    </div>`;
+}
+
+renderTop10();
+
+// ============================================================
+// CHECKLIST 탭
+// ============================================================
+const state = {checked: {}, autoFilled: {}};
+CRITERIA.forEach(c => { state.checked[c.id] = false; state.autoFilled[c.id] = false; });
+
+const critList = document.getElementById('critList');
+CRITERIA.forEach(c => {
+  const row = document.createElement('div');
+  row.className = 'crit';
+  row.id = 'crit-' + c.id;
+  row.innerHTML = `
+    <div class="box">✓</div>
+    <div class="body">
+      <div class="name">${c.name}</div>
+      <div class="desc">${c.desc}</div>
+      <div class="auto-val" id="autoVal-${c.id}"></div>
+    </div>`;
+  row.addEventListener('click', () => {
+    state.checked[c.id] = !state.checked[c.id];
+    state.autoFilled[c.id] = false;
+    row.classList.toggle('on', state.checked[c.id]);
+    row.classList.remove('auto-filled');
+    update();
+  });
+  critList.appendChild(row);
+});
+
+// 자동 채우기
+document.getElementById('autoFillBtn').addEventListener('click', async () => {
+  const code = document.getElementById('autoCodeInput').value.trim().padStart(6, '0');
+  const statusEl = document.getElementById('autoFillStatus');
+
+  if (!code || code.length !== 6 || !/^\d{6}$/.test(code)) {
+    statusEl.style.color = 'var(--down)';
+    statusEl.textContent = '6자리 숫자 코드를 입력하세요 (예: 005930)';
+    return;
+  }
+
+  statusEl.style.color = 'var(--text-dim)';
+  statusEl.textContent = 'kospi_data.json에서 검색 중...';
+
+  const data = await loadKospiData();
+  if (!data) {
+    statusEl.style.color = 'var(--down)';
+    statusEl.textContent = 'kospi_data.json을 불러오지 못했습니다. 배포 후 재시도하세요.';
+    return;
+  }
+
+  const stock = data.stocks.find(s => s.code === code);
+  if (!stock) {
+    statusEl.style.color = 'var(--down)';
+    statusEl.textContent = `코드 ${code}를 찾을 수 없습니다. 코스피 종목인지 확인하세요.`;
+    return;
+  }
+
+  // 종목명 자동 입력
+  document.getElementById('stockName').value = `${stock.name} (${stock.code})`;
+
+  // 6개 기준 자동 채우기 (트리거 제외)
+  CRITERIA.forEach(c => {
+    if (c.dataKey === null) return; // 트리거는 수동
+    const val = stock[c.dataKey];
+    state.checked[c.id] = !!val;
+    state.autoFilled[c.id] = true;
+
+    const row = document.getElementById('crit-' + c.id);
+    row.classList.toggle('on', !!val);
+    row.classList.toggle('auto-filled', !!val);
+
+    // 상세값 표시
+    const autoValEl = document.getElementById('autoVal-' + c.id);
+    let detail = '';
+    if (c.id === 'liq') detail = stock.trade_amount_20d != null ? `20일 평균 거래대금: ${fmt억(stock.trade_amount_20d)}` : '';
+    else if (c.id === 'vol') detail = stock.daily_range_pct != null ? `일중 변동폭 평균: ${stock.daily_range_pct}%` : '';
+    else if (c.id === 'trend') detail = `MA20: ${fmtPrice(stock.ma20)} / MA60: ${fmtPrice(stock.ma60)} / 현재: ${fmtPrice(stock.current_price)}`;
+    else if (c.id === 'sector') detail = stock.sector ? `업종: ${stock.sector} (RS ${stock.sector_rs ?? '—'})` : '';
+    else if (c.id === 'cap') detail = stock.market_cap != null ? `시가총액: ${fmt억(stock.market_cap)}` : '';
+    autoValEl.textContent = detail ? `↳ ${detail}` : '';
+  });
+
+  update();
+
+  const passCount = CRITERIA.filter(c => c.dataKey !== null && !!stock[c.dataKey]).length;
+  statusEl.style.color = 'var(--gold)';
+  statusEl.textContent = `${stock.name} 데이터 불러옴 — 정량 ${passCount}/6개 기준 충족 (트리거는 직접 확인 필요)`;
+});
+
+// 엔터키 지원
+document.getElementById('autoCodeInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('autoFillBtn').click();
+});
+
+// R:R 계산 및 점수 업데이트
+const buyEl = document.getElementById('buyPrice');
+const stopEl = document.getElementById('stopPrice');
+const targetEl = document.getElementById('targetPrice');
+const rrVal = document.getElementById('rrVal');
+const scoreVal = document.getElementById('scoreVal');
+const verdictBadge = document.getElementById('verdictBadge');
+const saveBtn = document.getElementById('saveBtn');
+const stockNameEl = document.getElementById('stockName');
+
+let currentRR = null;
+
+function computeRR() {
+  const buy = parseFloat(buyEl.value);
+  const stop = parseFloat(stopEl.value);
+  const target = parseFloat(targetEl.value);
+  if (!buy || !stop || !target || buy <= stop) {
+    rrVal.textContent = '—';
+    rrVal.className = 'val mono';
+    currentRR = null;
+    return;
+  }
+  const rr = (target - buy) / (buy - stop);
+  currentRR = rr;
+  rrVal.textContent = '1 : ' + rr.toFixed(2);
+  rrVal.className = 'val mono ' + (rr >= 1.5 ? 'rr-good' : 'rr-bad');
+}
+
+function update() {
+  computeRR();
+  const score = Object.values(state.checked).filter(Boolean).length;
+  scoreVal.textContent = score;
+
+  const rrOk = currentRR !== null && currentRR >= 1.5;
+  let verdict, cls;
+  if (score >= 6 && rrOk)      { verdict = '스윙 후보로 적합'; cls = 'v-good'; }
+  else if (score >= 4)          { verdict = '관망 · 추가 확인 필요'; cls = 'v-mid'; }
+  else                          { verdict = '기준 미달 · 매매 보류 권장'; cls = 'v-bad'; }
+
+  verdictBadge.textContent = verdict;
+  verdictBadge.className = 'verdict ' + cls;
+  saveBtn.disabled = !stockNameEl.value.trim();
+}
+
+[buyEl, stopEl, targetEl, stockNameEl].forEach(el => el.addEventListener('input', update));
+update();
+
+// ---- 히스토리 (localStorage 기반 fallback) ----
+const HKEY = 'screening-history-v2';
+
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(HKEY) || '[]'); }
+  catch(e) { return []; }
+}
+function saveHistory(list) {
+  localStorage.setItem(HKEY, JSON.stringify(list));
+}
+
+function fmtDate(d) {
+  const dt = new Date(d);
+  return dt.getFullYear()+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.'+String(dt.getDate()).padStart(2,'0');
+}
+
+function renderHistory(list) {
+  const body = document.getElementById('histBody');
+  if (!list.length) {
+    body.innerHTML = '<tr class="empty-row"><td colspan="6">아직 저장된 기록이 없습니다</td></tr>';
+    return;
+  }
+  body.innerHTML = list.slice().reverse().map((h, idx) => {
+    const realIdx = list.length - 1 - idx;
+    const vClass = h.verdict.includes('적합') ? 'rr-good' : (h.verdict.includes('보류') ? 'rr-bad' : '');
+    return `<tr>
+      <td class="mono">${fmtDate(h.date)}</td>
+      <td>${h.name}</td>
+      <td class="mono">${h.score}/7</td>
+      <td class="mono">${h.rr !== null ? '1:'+h.rr.toFixed(2) : '—'}</td>
+      <td class="${vClass}">${h.verdict}</td>
+      <td><span class="del" data-idx="${realIdx}">삭제</span></td>
+    </tr>`;
+  }).join('');
+
+  body.querySelectorAll('.del').forEach(el => {
+    el.addEventListener('click', () => {
+      const i = parseInt(el.dataset.idx, 10);
+      const list = loadHistory();
+      list.splice(i, 1);
+      saveHistory(list);
+      renderHistory(list);
+    });
+  });
+}
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const score = Object.values(state.checked).filter(Boolean).length;
+  const entry = { date: Date.now(), name: stockNameEl.value.trim(), score, rr: currentRR, verdict: verdictBadge.textContent };
+  const list = loadHistory();
+  list.push(entry);
+  saveHistory(list);
+  renderHistory(list);
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  if (!confirm('저장된 평가 기록을 모두 삭제할까요?')) return;
+  saveHistory([]);
+  renderHistory([]);
+});
+
+renderHistory(loadHistory());
+
+// ---- ticker ----
+const tickerItems = [
+  '거래대금 확인 필수', '손절 없이 진입 금지', 'R:R 1:1.5 이상 권장',
+  '거래세 0.20% 매도 시 부과', '섹터 모멘텀 동반 여부 체크', '시총 1,000억 미만 주의',
+  '트리거는 반드시 직접 확인', '자동 스크리닝은 정량 기준만 판단',
+];
+const inner = document.getElementById('tickerInner');
+inner.innerHTML = [...tickerItems, ...tickerItems].map(t => `<span>${t}</span>`).join('');
+</script>
+</body>
+</html>
