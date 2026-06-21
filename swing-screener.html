@@ -236,7 +236,7 @@
             종목코드 입력 시 kospi_data.json에서 6개 기준을 자동으로 불러옵니다.
           </div>
           <div class="autofill-bar">
-            <input type="text" id="autoCodeInput" placeholder="종목코드 입력 (예: 005930)" maxlength="6">
+            <input type="text" id="autoCodeInput" placeholder="종목코드(005930) 또는 종목명(삼성전자) 입력">
             <button class="autofill-btn" id="autoFillBtn">자동 채우기</button>
           </div>
           <div class="autofill-status" id="autoFillStatus"></div>
@@ -272,7 +272,7 @@
       <div class="panel">
         <h2>결과</h2>
         <div class="score-wrap">
-          <div class="score-num"><span id="scoreVal">0</span><span> / 7</span></div>
+          <div class="score-num"><span id="scoreVal">0</span><span> / 6</span></div>
           <div id="verdictBadge" class="verdict v-bad">기준 입력 대기</div>
         </div>
         <button class="save-btn" id="saveBtn" disabled>이 평가 기록 저장</button>
@@ -302,13 +302,12 @@
 // 공통 데이터
 // ============================================================
 const CRITERIA = [
-  {id:'liq',      name:'거래대금',           desc:'20일 평균 거래대금 50억 이상 — 슬리피지·스프레드 위험 제어',                   dataKey:'enough_liquidity'},
-  {id:'ma60',     name:'60일선 위',           desc:'현재가가 60일 이동평균선 위 — 중장기 상승추세 유지 확인',                       dataKey:'above_ma60'},
-  {id:'pullback', name:'눌림목 조정',          desc:'최근 20일 고점 대비 -5% 이상 하락 — 상승추세 내 매수 기회 구간',              dataKey:'pullback'},
-  {id:'voldry',   name:'조정 시 거래량 감소', desc:'하락 구간 평균 거래량이 60일 평균보다 적음 — 매도세 약한 자연스러운 조정',     dataKey:'volume_dry'},
-  {id:'sector',   name:'상대강도(RS)',         desc:'최근 20일 수익률이 KOSPI 지수보다 높음 — 시장 대비 강세 유지',                 dataKey:'sector_strong'},
-  {id:'trigger',  name:'명확한 트리거',        desc:'실적·신제품·정책 수혜 등 상승 근거 — 공시·뉴스에서 직접 확인 필요',           dataKey:null},
-  {id:'cap',      name:'시가총액',             desc:'1,000억원 이상 — 작전주·유동성 리스크 감소',                                  dataKey:'large_cap'},
+  {id:'liq',      name:'거래대금',           desc:'20일 평균 거래대금 50억 이상 — 슬리피지·스프레드 위험 제어',               dataKey:'enough_liquidity'},
+  {id:'ma60',     name:'60일선 위',           desc:'현재가가 60일 이동평균선 위 — 중장기 상승추세 유지 확인',                   dataKey:'above_ma60'},
+  {id:'pullback', name:'눌림목 조정',          desc:'최근 20일 고점 대비 -5% 이상 하락 — 상승추세 내 매수 기회 구간',          dataKey:'pullback'},
+  {id:'voldry',   name:'조정 시 거래량 감소', desc:'하락 구간 평균 거래량이 60일 평균보다 적음 — 매도세 약한 자연스러운 조정', dataKey:'volume_dry'},
+  {id:'sector',   name:'상대강도(RS)',         desc:'최근 20일 수익률이 KOSPI 지수보다 높음 — 시장 대비 강세 유지',             dataKey:'sector_strong'},
+  {id:'cap',      name:'시가총액',             desc:'1,000억원 이상 — 작전주·유동성 리스크 감소',                              dataKey:'large_cap'},
 ];
 
 // ============================================================
@@ -374,15 +373,18 @@ async function renderTop10() {
     sector_strong: '상대강도', large_cap: '시가총액',
   };
 
-  const qualified = data.stocks.filter(s => QUANT_KEYS.every(k => s[k] === true));
-  const top10 = qualified
-    .sort((a,b) => (b.trade_amount_20d||0) - (a.trade_amount_20d||0))
+  // 충족 기준 수 내림차순, 동점이면 거래대금 내림차순으로 상위 10개 항상 표시
+  const top10 = data.stocks
+    .map(s => Object.assign({}, s, {_cnt: QUANT_KEYS.filter(k => s[k] === true).length}))
+    .sort((a, b) => b._cnt - a._cnt || (b.trade_amount_20d||0) - (a.trade_amount_20d||0))
     .slice(0, 10);
 
   if (!top10.length) {
-    container.innerHTML = '<div class="loading-msg">오늘은 6개 기준을 모두 충족하는 종목이 없습니다.</div>';
+    container.innerHTML = '<div class="loading-msg">표시할 종목이 없습니다.</div>';
     return;
   }
+
+  const allPass = data.stocks.filter(s => QUANT_KEYS.every(k => s[k] === true)).length;
 
   const rows = top10.map((s, i) => {
     const failed = QUANT_KEYS.filter(k => !s[k]);
@@ -393,10 +395,11 @@ async function renderTop10() {
     const pullbackStr = s.pullback_pct != null
       ? `<span class="pullback-pct">${s.pullback_pct > 0 ? '+' : ''}${s.pullback_pct}%</span>` : '—';
 
-    const newsHtml = (s.news && s.news.length)
+    const newsCell = (s.news && s.news.length)
       ? `<div class="news-list">${s.news.map(n =>
           `<a class="news-item" href="${n.link}" target="_blank" rel="noopener noreferrer">${n.title}</a>`
-        ).join('')}</div>` : '';
+        ).join('')}</div>`
+      : `<span style="font-size:11px;color:var(--text-dim);">—</span>`;
 
     return `<tr>
       <td><span class="rank-num">${i+1}</span></td>
@@ -405,12 +408,11 @@ async function renderTop10() {
           <a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${s.code}" target="_blank" rel="noopener noreferrer">${s.name}</a>
         </div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);">${s.code} · ${s.sector||'—'}</div>
-        ${newsHtml}
       </td>
       <td class="price-cell">${fmtPrice(s.current_price)}<br><span style="font-size:10.5px;color:var(--text-dim);">MA60 ${fmtPrice(s.ma60)}</span></td>
       <td>${pullbackStr}<br><span class="amount-cell">${fmt억(s.trade_amount_20d)}</span></td>
       <td>${critCell}</td>
-      <td><span class="badge badge-warn">직접 확인 필요</span></td>
+      <td>${newsCell}</td>
     </tr>`;
   }).join('');
 
@@ -419,17 +421,17 @@ async function renderTop10() {
       <thead>
         <tr>
           <th>#</th>
-          <th>종목 · 뉴스</th>
+          <th>종목 · 업종</th>
           <th>현재가 / MA60</th>
           <th>눌림폭 / 거래대금</th>
           <th>기준 충족 여부</th>
-          <th>트리거</th>
+          <th>뉴스</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
     <div style="margin-top:12px;font-size:11.5px;color:var(--text-dim);">
-      전체 ${data.stocks.length}개 종목 중 6기준 충족: <strong style="color:var(--text);">${qualified.length}개</strong> · 상위 10개 표시
+      전체 ${data.stocks.length}개 종목 · 6기준 전부 충족: <strong style="color:var(--text);">${allPass}개</strong> · 충족 기준 많은 순 상위 10개 표시
     </div>`;
 }
 
@@ -465,12 +467,12 @@ CRITERIA.forEach(c => {
 
 // 자동 채우기
 document.getElementById('autoFillBtn').addEventListener('click', async () => {
-  const code = document.getElementById('autoCodeInput').value.trim().padStart(6, '0');
+  const input = document.getElementById('autoCodeInput').value.trim();
   const statusEl = document.getElementById('autoFillStatus');
 
-  if (!code || code.length !== 6 || !/^\d{6}$/.test(code)) {
+  if (!input) {
     statusEl.style.color = 'var(--down)';
-    statusEl.textContent = '6자리 숫자 코드를 입력하세요 (예: 005930)';
+    statusEl.textContent = '종목코드 또는 종목명을 입력하세요';
     return;
   }
 
@@ -484,19 +486,27 @@ document.getElementById('autoFillBtn').addEventListener('click', async () => {
     return;
   }
 
-  const stock = data.stocks.find(s => s.code === code);
+  // 숫자만 입력 → 코드 검색, 그 외 → 종목명 검색 (정확 일치 우선, 부분 일치 후순위)
+  let stock;
+  if (/^\d+$/.test(input)) {
+    const code = input.padStart(6, '0');
+    stock = data.stocks.find(s => s.code === code);
+  } else {
+    stock = data.stocks.find(s => s.name === input)
+         || data.stocks.find(s => s.name.includes(input));
+  }
+
   if (!stock) {
     statusEl.style.color = 'var(--down)';
-    statusEl.textContent = `코드 ${code}를 찾을 수 없습니다. 코스피 종목인지 확인하세요.`;
+    statusEl.textContent = `"${input}"을(를) 찾을 수 없습니다. 코스피 종목명 또는 6자리 코드를 확인하세요.`;
     return;
   }
 
   // 종목명 자동 입력
   document.getElementById('stockName').value = `${stock.name} (${stock.code})`;
 
-  // 6개 기준 자동 채우기 (트리거 제외)
+  // 6개 기준 자동 채우기
   CRITERIA.forEach(c => {
-    if (c.dataKey === null) return; // 트리거는 수동
     const val = stock[c.dataKey];
     state.checked[c.id] = !!val;
     state.autoFilled[c.id] = true;
@@ -519,13 +529,12 @@ document.getElementById('autoFillBtn').addEventListener('click', async () => {
 
   update();
 
-  const passCount = CRITERIA.filter(c => c.dataKey !== null && !!stock[c.dataKey]).length;
   statusEl.style.color = 'var(--gold)';
-  const failedNames = CRITERIA.filter(c => c.dataKey && !stock[c.dataKey]).map(c => c.name);
+  const failedNames = CRITERIA.filter(c => !stock[c.dataKey]).map(c => c.name);
   const summaryTxt = failedNames.length === 0
     ? '6개 기준 전부 충족'
     : `미충족: ${failedNames.join(', ')}`;
-  statusEl.innerHTML = `<a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${stock.code}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${stock.name}</a> 불러옴 — ${summaryTxt} (트리거는 직접 확인 필요)`;
+  statusEl.innerHTML = `<a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${stock.code}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${stock.name}</a> 불러옴 — ${summaryTxt}`;
 });
 
 // 엔터키 지원
@@ -568,7 +577,7 @@ function update() {
 
   const rrOk = currentRR !== null && currentRR >= 1.5;
   let verdict, cls;
-  if (score >= 6 && rrOk)      { verdict = '스윙 후보로 적합'; cls = 'v-good'; }
+  if (score === 6 && rrOk)      { verdict = '스윙 후보로 적합'; cls = 'v-good'; }
   else if (score >= 4)          { verdict = '관망 · 추가 확인 필요'; cls = 'v-mid'; }
   else                          { verdict = '기준 미달 · 매매 보류 권장'; cls = 'v-bad'; }
 
@@ -608,7 +617,7 @@ function renderHistory(list) {
     return `<tr>
       <td class="mono">${fmtDate(h.date)}</td>
       <td>${h.name}</td>
-      <td class="mono">${h.score}/7</td>
+      <td class="mono">${h.score}/6</td>
       <td class="mono">${h.rr !== null ? '1:'+h.rr.toFixed(2) : '—'}</td>
       <td class="${vClass}">${h.verdict}</td>
       <td><span class="del" data-idx="${realIdx}">삭제</span></td>
