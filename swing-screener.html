@@ -323,10 +323,11 @@ async function loadKospiData() {
   if (kospiData) return kospiData;
   try {
     const res = await fetch('/kospi_data.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status} — Content-Type: ${res.headers.get('content-type')}`);
     kospiData = await res.json();
     return kospiData;
   } catch(e) {
+    console.error('[loadKospiData] 실패:', e);
     return null;
   }
 }
