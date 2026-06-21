@@ -178,6 +178,16 @@
   .crit-summary.pass{color:var(--up);}
   .crit-summary.fail{color:var(--gold);}
   .pullback-pct{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--up);}
+
+  /* 선정 기준 카드 */
+  .criteria-section{margin-bottom:16px;}
+  .criteria-section-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;}
+  .criteria-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  @media(max-width:600px){.criteria-cards{grid-template-columns:repeat(2,1fr);}}
+  .crit-card{background:var(--panel-2);border:1px solid var(--border);border-radius:5px;padding:11px 13px;}
+  .crit-card-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--gold);background:rgba(232,179,57,0.12);border-radius:3px;padding:1px 5px;display:inline-block;margin-bottom:6px;}
+  .crit-card-name{font-size:13px;font-weight:700;margin-bottom:3px;color:var(--text);}
+  .crit-card-desc{font-size:11.5px;color:var(--text-dim);line-height:1.5;}
 </style>
 </head>
 <body>
@@ -207,6 +217,42 @@
       <div class="top10-head">
         <h2>오늘의 스윙 후보 Top 10</h2>
         <span class="updated-at" id="updatedAt">데이터 로딩 중...</span>
+      </div>
+
+      <div class="criteria-section">
+        <div class="criteria-section-label">선정 기준 6가지</div>
+        <div class="criteria-cards">
+          <div class="crit-card">
+            <div class="crit-card-num">01</div>
+            <div class="crit-card-name">거래대금</div>
+            <div class="crit-card-desc">20일 평균 거래대금 50억 이상 (유동성 확인)</div>
+          </div>
+          <div class="crit-card">
+            <div class="crit-card-num">02</div>
+            <div class="crit-card-name">60일선 위</div>
+            <div class="crit-card-desc">현재가가 60일 평균주가 위 (중장기 상승추세 유지)</div>
+          </div>
+          <div class="crit-card">
+            <div class="crit-card-num">03</div>
+            <div class="crit-card-name">눌림목</div>
+            <div class="crit-card-desc">최근 20일 고점 대비 5% 이상 하락 (조정 구간 포착)</div>
+          </div>
+          <div class="crit-card">
+            <div class="crit-card-num">04</div>
+            <div class="crit-card-name">거래량 감소</div>
+            <div class="crit-card-desc">조정 구간 평균 거래량이 평소보다 감소 (자연스러운 쉬어가기 확인)</div>
+          </div>
+          <div class="crit-card">
+            <div class="crit-card-num">05</div>
+            <div class="crit-card-name">RS (상대강도)</div>
+            <div class="crit-card-desc">속한 업종이 코스피 대비 강세 (업종 모멘텀 확인)</div>
+          </div>
+          <div class="crit-card">
+            <div class="crit-card-num">06</div>
+            <div class="crit-card-name">시가총액</div>
+            <div class="crit-card-desc">1,000억원 이상 (작전주 리스크 회피)</div>
+          </div>
+        </div>
       </div>
 
       <div class="trigger-notice">
