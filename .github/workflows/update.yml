@@ -6,7 +6,7 @@ on:
     - cron: "50 23 * * 0-4"
     # 한국시간 16:00 → UTC 07:00
     - cron: "0 7 * * 1-5"
-  workflow_dispatch:   # 수동 실행 허용
+  workflow_dispatch:
 
 jobs:
   fetch:
@@ -14,11 +14,9 @@ jobs:
     timeout-minutes: 120
 
     steps:
-      - name: 저장소 체크아웃
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Python 3.11 설정
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -26,6 +24,9 @@ jobs:
         run: pip install finance-datareader pandas numpy requests
 
       - name: 데이터 수집 실행
+        env:
+          NAVER_CLIENT_ID:     ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
         run: python fetch_kospi.py
 
       - name: kospi_data.json 커밋 & 푸시

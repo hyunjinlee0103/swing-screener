@@ -171,6 +171,13 @@
 
   .price-cell{font-family:'JetBrains Mono',monospace;font-size:12.5px;}
   .amount-cell{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-dim);}
+  .news-list{margin-top:6px;display:flex;flex-direction:column;gap:3px;}
+  .news-item{font-size:11px;color:var(--text-dim);text-decoration:none;line-height:1.4;display:block;}
+  .news-item:hover{color:var(--gold);text-decoration:underline;}
+  .crit-summary{font-size:11.5px;}
+  .crit-summary.pass{color:var(--up);}
+  .crit-summary.fail{color:var(--gold);}
+  .pullback-pct{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--up);}
 </style>
 </head>
 <body>
@@ -181,7 +188,7 @@
   <header class="top">
     <div class="eyebrow">SWING SCREENER</div>
     <h1>국내주식 스윙매매 체크리스트</h1>
-    <p class="sub">코스피 전 종목 자동 스크리닝 + 개별 종목 체크리스트를 한 화면에서 확인하세요.</p>
+    <p class="sub">상승추세 중 눌림목(조정) 후보를 자동으로 찾아줍니다. 60일선 위에서 거래되며 최근 5% 이상 눌린 종목 중 거래량이 줄어든 후보를 선별합니다.</p>
   </header>
 
   <div class="disclaimer">
@@ -205,9 +212,9 @@
       <div class="trigger-notice">
         <span class="icon">⚠</span>
         <div>
-          아래 종목들은 <strong>6개 정량 기준</strong>을 모두 충족합니다.
+          아래 종목들은 <strong>6개 정량 기준(거래대금·60일선·눌림목·거래량감소·RS·시총)</strong>을 모두 충족합니다.
           단, <strong>명확한 트리거(실적·신제품·정책 수혜 등)</strong>는 정성적 판단이 필요하므로
-          HTS·뉴스·공시를 통해 <strong>직접 확인</strong>하신 후 진입 여부를 결정하세요.
+          뉴스·공시를 통해 <strong>직접 확인</strong>하신 후 진입 여부를 결정하세요.
         </div>
       </div>
 
@@ -295,13 +302,13 @@
 // 공통 데이터
 // ============================================================
 const CRITERIA = [
-  {id:'liq',      name:'거래대금',     desc:'일평균 거래대금이 충분한가 (대략 50억원 이상 — 부족하면 슬리피지·스프레드 위험)', dataKey:'enough_liquidity'},
-  {id:'vol',      name:'변동성',       desc:'최근 일중 변동폭이 스윙에 적합한가 (평균 3% 이상)',                               dataKey:'enough_volatility'},
-  {id:'trend',    name:'추세',         desc:'20일선 / 60일선 위에서 거래되고 있는가',                                           dataKey:'above_ma'},
-  {id:'volconf',  name:'거래량 동반',  desc:'상승할 때 거래량이 평소보다 늘었는가 (매수세 유입 신호)',                          dataKey:'volume_on_up'},
-  {id:'sector',   name:'상대강도(RS)', desc:'최근 20일 수익률이 KOSPI 지수보다 높은가 (자동 계산: 개별 종목 상대강도)',         dataKey:'sector_strong'},
-  {id:'trigger',  name:'명확한 트리거', desc:'실적, 신제품, 정책 수혜 등 상승 이유가 뚜렷한가 — HTS·뉴스에서 직접 확인 필요',  dataKey:null},
-  {id:'cap',      name:'시가총액',     desc:'너무 작지 않은가 (1,000억원 이상이면 작전주 리스크 감소)',                         dataKey:'large_cap'},
+  {id:'liq',      name:'거래대금',           desc:'20일 평균 거래대금 50억 이상 — 슬리피지·스프레드 위험 제어',                   dataKey:'enough_liquidity'},
+  {id:'ma60',     name:'60일선 위',           desc:'현재가가 60일 이동평균선 위 — 중장기 상승추세 유지 확인',                       dataKey:'above_ma60'},
+  {id:'pullback', name:'눌림목 조정',          desc:'최근 20일 고점 대비 -5% 이상 하락 — 상승추세 내 매수 기회 구간',              dataKey:'pullback'},
+  {id:'voldry',   name:'조정 시 거래량 감소', desc:'하락 구간 평균 거래량이 60일 평균보다 적음 — 매도세 약한 자연스러운 조정',     dataKey:'volume_dry'},
+  {id:'sector',   name:'상대강도(RS)',         desc:'최근 20일 수익률이 KOSPI 지수보다 높음 — 시장 대비 강세 유지',                 dataKey:'sector_strong'},
+  {id:'trigger',  name:'명확한 트리거',        desc:'실적·신제품·정책 수혜 등 상승 근거 — 공시·뉴스에서 직접 확인 필요',           dataKey:null},
+  {id:'cap',      name:'시가총액',             desc:'1,000억원 이상 — 작전주·유동성 리스크 감소',                                  dataKey:'large_cap'},
 ];
 
 // ============================================================
@@ -360,7 +367,13 @@ async function renderTop10() {
 
   updatedAt.textContent = '업데이트: ' + (data.updated_at || '—');
 
-  const QUANT_KEYS = ['enough_liquidity','enough_volatility','above_ma','volume_on_up','sector_strong','large_cap'];
+  const QUANT_KEYS = ['enough_liquidity','above_ma60','pullback','volume_dry','sector_strong','large_cap'];
+  const CRIT_NAMES = {
+    enough_liquidity: '거래대금', above_ma60: '60일선',
+    pullback: '눌림목', volume_dry: '거래량감소',
+    sector_strong: '상대강도', large_cap: '시가총액',
+  };
+
   const qualified = data.stocks.filter(s => QUANT_KEYS.every(k => s[k] === true));
   const top10 = qualified
     .sort((a,b) => (b.trade_amount_20d||0) - (a.trade_amount_20d||0))
@@ -371,19 +384,19 @@ async function renderTop10() {
     return;
   }
 
-  const CRIT_LABELS = [
-    {key:'enough_liquidity', label:'거래대금'},
-    {key:'enough_volatility',label:'변동성'},
-    {key:'above_ma',         label:'MA위'},
-    {key:'volume_on_up',     label:'거래량'},
-    {key:'sector_strong',    label:'업종'},
-    {key:'large_cap',        label:'시총'},
-  ];
-
   const rows = top10.map((s, i) => {
-    const icons = CRIT_LABELS.map(c =>
-      `<span class="ci ${s[c.key] ? 'ci-ok' : 'ci-no'}" title="${c.label}">${s[c.key] ? '✓' : '✗'}</span>`
-    ).join('');
+    const failed = QUANT_KEYS.filter(k => !s[k]);
+    const critCell = failed.length === 0
+      ? `<span class="crit-summary pass">✓ 전부 충족</span>`
+      : `<span class="crit-summary fail">미충족: ${failed.map(k => CRIT_NAMES[k]).join(', ')}</span>`;
+
+    const pullbackStr = s.pullback_pct != null
+      ? `<span class="pullback-pct">${s.pullback_pct > 0 ? '+' : ''}${s.pullback_pct}%</span>` : '—';
+
+    const newsHtml = (s.news && s.news.length)
+      ? `<div class="news-list">${s.news.map(n =>
+          `<a class="news-item" href="${n.link}" target="_blank" rel="noopener noreferrer">${n.title}</a>`
+        ).join('')}</div>` : '';
 
     return `<tr>
       <td><span class="rank-num">${i+1}</span></td>
@@ -391,14 +404,12 @@ async function renderTop10() {
         <div style="font-weight:500;font-size:13px;">
           <a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${s.code}" target="_blank" rel="noopener noreferrer">${s.name}</a>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);">${s.code}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);">${s.code} · ${s.sector||'—'}</div>
+        ${newsHtml}
       </td>
-      <td class="price-cell">${fmtPrice(s.current_price)}</td>
-      <td class="amount-cell">${fmt억(s.trade_amount_20d)}</td>
-      <td>
-        <div style="font-size:11.5px;color:var(--text-dim);">${s.sector||'—'}</div>
-      </td>
-      <td><div class="criteria-icons">${icons}</div></td>
+      <td class="price-cell">${fmtPrice(s.current_price)}<br><span style="font-size:10.5px;color:var(--text-dim);">MA60 ${fmtPrice(s.ma60)}</span></td>
+      <td>${pullbackStr}<br><span class="amount-cell">${fmt억(s.trade_amount_20d)}</span></td>
+      <td>${critCell}</td>
       <td><span class="badge badge-warn">직접 확인 필요</span></td>
     </tr>`;
   }).join('');
@@ -408,18 +419,17 @@ async function renderTop10() {
       <thead>
         <tr>
           <th>#</th>
-          <th>종목</th>
-          <th>현재가</th>
-          <th>거래대금(20일평균)</th>
-          <th>업종</th>
-          <th>6개 기준</th>
+          <th>종목 · 뉴스</th>
+          <th>현재가 / MA60</th>
+          <th>눌림폭 / 거래대금</th>
+          <th>기준 충족 여부</th>
           <th>트리거</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
     <div style="margin-top:12px;font-size:11.5px;color:var(--text-dim);">
-      전체 ${data.stocks.length}개 종목 중 6개 기준 충족: <strong style="color:var(--text);">${qualified.length}개</strong> · 상위 10개 표시
+      전체 ${data.stocks.length}개 종목 중 6기준 충족: <strong style="color:var(--text);">${qualified.length}개</strong> · 상위 10개 표시
     </div>`;
 }
 
@@ -498,11 +508,12 @@ document.getElementById('autoFillBtn').addEventListener('click', async () => {
     // 상세값 표시
     const autoValEl = document.getElementById('autoVal-' + c.id);
     let detail = '';
-    if (c.id === 'liq') detail = stock.trade_amount_20d != null ? `20일 평균 거래대금: ${fmt억(stock.trade_amount_20d)}` : '';
-    else if (c.id === 'vol') detail = stock.daily_range_pct != null ? `일중 변동폭 평균: ${stock.daily_range_pct}%` : '';
-    else if (c.id === 'trend') detail = `MA20: ${fmtPrice(stock.ma20)} / MA60: ${fmtPrice(stock.ma60)} / 현재: ${fmtPrice(stock.current_price)}`;
-    else if (c.id === 'sector') detail = stock.sector ? `업종: ${stock.sector} (RS ${stock.sector_rs ?? '—'})` : '';
-    else if (c.id === 'cap') detail = stock.market_cap != null ? `시가총액: ${fmt억(stock.market_cap)}` : '';
+    if      (c.id === 'liq')     detail = stock.trade_amount_20d != null ? `20일 평균: ${fmt억(stock.trade_amount_20d)}` : '';
+    else if (c.id === 'ma60')    detail = `MA60: ${fmtPrice(stock.ma60)} / 현재: ${fmtPrice(stock.current_price)}`;
+    else if (c.id === 'pullback') detail = stock.pullback_pct != null ? `20일 고점(${fmtPrice(stock.high_20d)}) 대비 ${stock.pullback_pct}%` : '';
+    else if (c.id === 'voldry')  detail = '하락 구간 거래량 < 60일 평균 거래량';
+    else if (c.id === 'sector')  detail = stock.sector ? `업종: ${stock.sector} · KOSPI 대비 RS` : 'KOSPI 대비 RS';
+    else if (c.id === 'cap')     detail = stock.market_cap != null ? `시가총액: ${fmt억(stock.market_cap)}` : '';
     autoValEl.textContent = detail ? `↳ ${detail}` : '';
   });
 
@@ -510,7 +521,11 @@ document.getElementById('autoFillBtn').addEventListener('click', async () => {
 
   const passCount = CRITERIA.filter(c => c.dataKey !== null && !!stock[c.dataKey]).length;
   statusEl.style.color = 'var(--gold)';
-  statusEl.innerHTML = `<a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${stock.code}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${stock.name}</a> 데이터 불러옴 — 정량 ${passCount}/6개 기준 충족 (트리거는 직접 확인 필요)`;
+  const failedNames = CRITERIA.filter(c => c.dataKey && !stock[c.dataKey]).map(c => c.name);
+  const summaryTxt = failedNames.length === 0
+    ? '6개 기준 전부 충족'
+    : `미충족: ${failedNames.join(', ')}`;
+  statusEl.innerHTML = `<a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${stock.code}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${stock.name}</a> 불러옴 — ${summaryTxt} (트리거는 직접 확인 필요)`;
 });
 
 // 엔터키 지원
@@ -630,9 +645,9 @@ renderHistory(loadHistory());
 
 // ---- ticker ----
 const tickerItems = [
-  '거래대금 확인 필수', '손절 없이 진입 금지', 'R:R 1:1.5 이상 권장',
-  '거래세 0.20% 매도 시 부과', '섹터 모멘텀 동반 여부 체크', '시총 1,000억 미만 주의',
-  '트리거는 반드시 직접 확인', '자동 스크리닝은 정량 기준만 판단',
+  '눌림목 전략: 60일선 위 + 5% 이상 조정', '거래량 감소 = 매도세 약한 자연스러운 조정',
+  '트리거는 반드시 직접 확인', '손절 없이 진입 금지', 'R:R 1:1.5 이상 권장',
+  '거래세 0.20% 매도 시 부과', '시총 1,000억 미만 주의', 'RS > KOSPI 종목 우선',
 ];
 const inner = document.getElementById('tickerInner');
 inner.innerHTML = [...tickerItems, ...tickerItems].map(t => `<span>${t}</span>`).join('');
