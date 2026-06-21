@@ -21,6 +21,8 @@
     --gold-dim:#8A6E2E;
   }
   *{box-sizing:border-box;}
+  .stock-link{color:inherit;text-decoration:none;}
+  .stock-link:hover{color:var(--gold);text-decoration:underline;}
   body{
     margin:0;
     background:var(--bg);
@@ -386,7 +388,9 @@ async function renderTop10() {
     return `<tr>
       <td><span class="rank-num">${i+1}</span></td>
       <td>
-        <div style="font-weight:500;font-size:13px;">${s.name}</div>
+        <div style="font-weight:500;font-size:13px;">
+          <a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${s.code}" target="_blank" rel="noopener noreferrer">${s.name}</a>
+        </div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);">${s.code}</div>
       </td>
       <td class="price-cell">${fmtPrice(s.current_price)}</td>
@@ -506,7 +510,7 @@ document.getElementById('autoFillBtn').addEventListener('click', async () => {
 
   const passCount = CRITERIA.filter(c => c.dataKey !== null && !!stock[c.dataKey]).length;
   statusEl.style.color = 'var(--gold)';
-  statusEl.textContent = `${stock.name} 데이터 불러옴 — 정량 ${passCount}/6개 기준 충족 (트리거는 직접 확인 필요)`;
+  statusEl.innerHTML = `<a class="stock-link" href="https://finance.naver.com/item/main.naver?code=${stock.code}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">${stock.name}</a> 데이터 불러옴 — 정량 ${passCount}/6개 기준 충족 (트리거는 직접 확인 필요)`;
 });
 
 // 엔터키 지원
