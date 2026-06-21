@@ -322,7 +322,7 @@ let kospiData = null;
 async function loadKospiData() {
   if (kospiData) return kospiData;
   try {
-    const res = await fetch('kospi_data.json');
+    const res = await fetch('/kospi_data.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     kospiData = await res.json();
     return kospiData;

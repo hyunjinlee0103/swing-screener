@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/swing-screener.html" }
+    { "source": "/((?!.*\\.json$).*)", "destination": "/swing-screener.html" }
   ],
   "headers": [
     {
