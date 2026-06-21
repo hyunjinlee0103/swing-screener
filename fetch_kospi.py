@@ -56,6 +56,8 @@ def calc_indicators(code: str, end: datetime, kospi_ret_20d: float) -> Optional[
         return None
 
     df = df.dropna(subset=["Open", "High", "Low", "Close", "Volume"])
+    # low=0인 행 제거 (거래정지·서킷브레이커 등 → 나누기 제로 방지)
+    df = df[df["Low"] > 0]
     if len(df) < 20:
         return None
 
@@ -68,17 +70,20 @@ def calc_indicators(code: str, end: datetime, kospi_ret_20d: float) -> Optional[
 
     # 거래대금 (종가 × 거래량) 20일 평균
     trade_amount_20 = float((close * volume).rolling(20).mean().iloc[-1])
-    enough_liquidity = trade_amount_20 >= MIN_TRADE_AMOUNT
+    enough_liquidity = bool(np.isfinite(trade_amount_20) and trade_amount_20 >= MIN_TRADE_AMOUNT)
 
-    # 일중 변동폭 20일 평균
-    daily_range_pct = float(((high - low) / low * 100).rolling(20).mean().iloc[-1])
-    enough_volatility = daily_range_pct >= MIN_INTRADAY_RANGE
+    # 일중 변동폭 20일 평균 (low>0 보장된 상태이므로 NaN 발생 안 함)
+    daily_range_pct_raw = ((high - low) / low * 100).rolling(20).mean().iloc[-1]
+    daily_range_pct = round(float(daily_range_pct_raw), 2) if np.isfinite(daily_range_pct_raw) else None
+    enough_volatility = bool(daily_range_pct is not None and daily_range_pct >= MIN_INTRADAY_RANGE)
 
     # 이동평균선
-    ma20 = float(close.rolling(20).mean().iloc[-1])
-    ma60 = float(close.rolling(60).mean().iloc[-1]) if len(df) >= 60 else None
+    ma20_raw = close.rolling(20).mean().iloc[-1]
+    ma20 = round(float(ma20_raw), 2) if np.isfinite(ma20_raw) else None
+    ma60_raw = close.rolling(60).mean().iloc[-1] if len(df) >= 60 else None
+    ma60 = round(float(ma60_raw), 2) if (ma60_raw is not None and np.isfinite(ma60_raw)) else None
     above_ma = bool(
-        current_price > ma20
+        ma20 is not None and current_price > ma20
         and (ma60 is None or current_price > ma60)
     )
 
@@ -87,28 +92,30 @@ def calc_indicators(code: str, end: datetime, kospi_ret_20d: float) -> Optional[
     if price_up.sum() >= 5:
         avg_up_vol = float(volume[price_up].rolling(10, min_periods=1).mean().iloc[-1])
         avg_vol = float(volume.rolling(20).mean().iloc[-1])
-        volume_on_up = avg_up_vol >= avg_vol * VOLUME_RATIO_THRESHOLD
+        volume_on_up = bool(np.isfinite(avg_up_vol) and np.isfinite(avg_vol)
+                            and avg_vol > 0 and avg_up_vol >= avg_vol * VOLUME_RATIO_THRESHOLD)
     else:
         volume_on_up = False
 
     # 업종 모멘텀: 종목 20일 수익률 vs KOSPI 20일 수익률 (개별 상대강도)
-    if len(df) >= 20:
-        stock_ret_20d = float(close.iloc[-1] / close.iloc[-20] - 1)
-        sector_strong = stock_ret_20d > kospi_ret_20d
+    base_price = float(close.iloc[-20])
+    if base_price > 0:
+        stock_ret_20d = float(close.iloc[-1] / base_price - 1)
+        sector_strong = bool(np.isfinite(stock_ret_20d) and stock_ret_20d > kospi_ret_20d)
     else:
         sector_strong = False
 
     return {
         "current_price": current_price,
-        "trade_amount_20d": round(trade_amount_20),
-        "daily_range_pct": round(daily_range_pct, 2),
-        "ma20": round(ma20, 2),
-        "ma60": round(ma60, 2) if ma60 is not None else None,
-        "enough_liquidity": bool(enough_liquidity),
-        "enough_volatility": bool(enough_volatility),
+        "trade_amount_20d": round(trade_amount_20) if np.isfinite(trade_amount_20) else None,
+        "daily_range_pct": daily_range_pct,
+        "ma20": ma20,
+        "ma60": ma60,
+        "enough_liquidity": enough_liquidity,
+        "enough_volatility": enough_volatility,
         "above_ma": above_ma,
-        "volume_on_up": bool(volume_on_up),
-        "sector_strong": bool(sector_strong),
+        "volume_on_up": volume_on_up,
+        "sector_strong": sector_strong,
     }
 
 
@@ -196,7 +203,7 @@ def main():
     }
 
     with open("kospi_data.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, indent=2, allow_nan=False)
 
     pass_all = sum(
         1 for s in results
