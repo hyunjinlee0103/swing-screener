@@ -2647,7 +2647,23 @@
       "volume_dry": true,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "9000피 뚫은 K증시의 역설…상장 종목 과반, 1년 전보다 주가 하락",
+          "link": "https://www.ziksir.com/news/articleView.html?idxno=137463",
+          "pubDate": "Sun, 21 Jun 2026 06:00:00 +0900"
+        },
+        {
+          "title": "[거래소 기관] AI 반도체 사고 전력·조선 팔았다…수급 변화 주목",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461610",
+          "pubDate": "Fri, 19 Jun 2026 16:12:00 +0900"
+        },
+        {
+          "title": "AI 데이터센터 한계 깬다…SK하이닉스, 차세대 CXL 기술로 초격차",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=461124",
+          "pubDate": "Thu, 18 Jun 2026 10:34:00 +0900"
+        }
+      ]
     },
     {
       "code": "279570",
