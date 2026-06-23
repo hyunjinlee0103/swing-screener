@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23 12:17:37",
+  "updated_at": "2026-06-23 12:47:02",
   "kospi_ret_20d": 1.94,
   "stocks": [
     {
@@ -19,7 +19,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "AI 거품 꺼지나…韓·美 반도체주 동반 급락, 나스닥 선물 3%↓",
+          "link": "https://www.newspim.com/news/view/20260623001051",
+          "pubDate": "Tue, 23 Jun 2026 22:03:00 +0900"
+        },
+        {
+          "title": "‘SK하이닉스 대박’ 소유, 1박 170만원 이탈리아 호텔 망설인 이유 “혼...",
+          "link": "https://www.heraldmuse.com/article/10785437?ref=naver",
+          "pubDate": "Tue, 23 Jun 2026 22:00:00 +0900"
+        },
+        {
+          "title": "대장주 삼전닉스 무너진 '검은 화요일'",
+          "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=551905",
+          "pubDate": "Tue, 23 Jun 2026 21:44:00 +0900"
+        }
+      ]
     },
     {
       "code": "005930",
@@ -38,7 +54,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "대장주 삼전닉스 무너진 '검은 화요일'",
+          "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=551905",
+          "pubDate": "Tue, 23 Jun 2026 21:44:00 +0900"
+        },
+        {
+          "title": "‘무려 26년 만’ 삼성전자 제치고 ‘시총 1위’…ADR까지 기대 쏠린다",
+          "link": "https://biz.heraldcorp.com/article/10784927?ref=naver",
+          "pubDate": "Tue, 23 Jun 2026 21:41:00 +0900"
+        },
+        {
+          "title": "미래에셋증권, 30억 이상 자산가 고객 1년간 3배 증가",
+          "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=359186",
+          "pubDate": "Tue, 23 Jun 2026 21:40:00 +0900"
+        }
+      ]
     },
     {
       "code": "402340",
@@ -57,7 +89,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "코스피 하루 만에 10% 급락-역대 최대 낙폭 기록하며 8,200선 턱걸이",
+          "link": "https://www.mediafine.co.kr/news/articleView.html?idxno=81668",
+          "pubDate": "Tue, 23 Jun 2026 21:28:00 +0900"
+        },
+        {
+          "title": "[데스크칼럼] K양극화 후폭풍 거셀 듯",
+          "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=551847",
+          "pubDate": "Tue, 23 Jun 2026 21:14:00 +0900"
+        },
+        {
+          "title": "[초점] 시총 역전 다음날 역대급 폭락…'강세장 종료 시그널' 재조명",
+          "link": "http://www.newsian.co.kr/news/articleView.html?idxno=91343",
+          "pubDate": "Tue, 23 Jun 2026 19:00:00 +0900"
+        }
+      ]
     },
     {
       "code": "005935",
@@ -76,7 +124,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "연기금, 5일간 1조5천억 팔았다… 증시 급락 부른 '리밸런싱'",
+          "link": "http://www.fnnews.com/news/202606231821146068",
+          "pubDate": "Tue, 23 Jun 2026 18:23:00 +0900"
+        },
+        {
+          "title": "&quot;삼전닉스 시총 역전? 강세장 끝난다&quot;…증권사 보고서 화제",
+          "link": "https://view.asiae.co.kr/article/2026062317360582872",
+          "pubDate": "Tue, 23 Jun 2026 17:40:00 +0900"
+        },
+        {
+          "title": "'검은 화요일' 코스피, 10% 폭락 8203 마감···삼전닉스 12%대 '뚝'",
+          "link": "https://www.seoulfn.com/news/articleView.html?idxno=631769",
+          "pubDate": "Tue, 23 Jun 2026 17:17:00 +0900"
+        }
+      ]
     },
     {
       "code": "009150",
@@ -95,7 +159,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "[공시] 서산 '거래 정지', 삼성전기우 등 16개 종목 '공매도 금지' 등......",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=707521",
+          "pubDate": "Tue, 23 Jun 2026 22:10:00 +0900"
+        },
+        {
+          "title": "코스피 하루 만에 10% 급락-역대 최대 낙폭 기록하며 8,200선 턱걸이",
+          "link": "https://www.mediafine.co.kr/news/articleView.html?idxno=81668",
+          "pubDate": "Tue, 23 Jun 2026 21:28:00 +0900"
+        },
+        {
+          "title": "[데스크칼럼] K양극화 후폭풍 거셀 듯",
+          "link": "https://www.idaegu.co.kr/news/articleView.html?idxno=551847",
+          "pubDate": "Tue, 23 Jun 2026 21:14:00 +0900"
+        }
+      ]
     },
     {
       "code": "005380",
@@ -132,7 +212,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "&quot;삼성전자 주가 급등·주주환원·원전 호재…삼박자 맞은 삼성물산 거침...",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=268403",
+          "pubDate": "Tue, 23 Jun 2026 18:30:00 +0900"
+        },
+        {
+          "title": "연기금, 5일간 1조5천억 팔았다… 증시 급락 부른 '리밸런싱'",
+          "link": "http://www.fnnews.com/news/202606231821146068",
+          "pubDate": "Tue, 23 Jun 2026 18:23:00 +0900"
+        },
+        {
+          "title": "한화생명 소액주주들, 불공정거래 조사 요청 나선 사연",
+          "link": "https://ilyo.co.kr/?ac=article_view&entry_id=511548",
+          "pubDate": "Tue, 23 Jun 2026 18:06:00 +0900"
+        }
+      ]
     },
     {
       "code": "373220",
@@ -169,7 +265,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "코스피 1년 새 3배 뛸 때 ‘주주친화 경영’은 제자리",
+          "link": "https://www.khan.co.kr/article/202606232039005",
+          "pubDate": "Tue, 23 Jun 2026 20:39:00 +0900"
+        },
+        {
+          "title": "-9.99%, 검은 화요일…743조 사라진 하루",
+          "link": "http://weekly.chosun.com/news/articleView.html?idxno=52828",
+          "pubDate": "Tue, 23 Jun 2026 19:46:00 +0900"
+        },
+        {
+          "title": "&quot;삼성전자 주가 급등·주주환원·원전 호재…삼박자 맞은 삼성물산 거침...",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=268403",
+          "pubDate": "Tue, 23 Jun 2026 18:30:00 +0900"
+        }
+      ]
     },
     {
       "code": "329180",
@@ -1502,7 +1614,23 @@
       "volume_dry": true,
       "sector_strong": false,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "안정적 전장 부품에 에너지 신사업 가속…한솔테크닉스, 실적 턴어라운...",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462035",
+          "pubDate": "Mon, 22 Jun 2026 13:54:00 +0900"
+        },
+        {
+          "title": "테스트 장비 고도화의 수혜…타이거일렉, 검사 장비용 기판 사업 순항",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=462022",
+          "pubDate": "Mon, 22 Jun 2026 13:16:00 +0900"
+        },
+        {
+          "title": "주가는 이미 돌파했는데…뒤늦게 높아지는 증권사 목표가",
+          "link": "https://www.thepublic.kr/news/articleView.html?idxno=308542",
+          "pubDate": "Mon, 22 Jun 2026 11:08:00 +0900"
+        }
+      ]
     },
     {
       "code": "001440",
@@ -1953,7 +2081,23 @@
       "volume_dry": true,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "삼전보다 더 올랐다…앞으로 더 간다는 ‘제2의 반도체’ [플러스 관심...",
+          "link": "https://www.mk.co.kr/article/12081270",
+          "pubDate": "Tue, 23 Jun 2026 19:45:00 +0900"
+        },
+        {
+          "title": "외국인 늘고 명품 매출 증가… 백화점 3사 시총 16조 넘었다",
+          "link": "http://www.fnnews.com/news/202606231817507286",
+          "pubDate": "Tue, 23 Jun 2026 18:19:00 +0900"
+        },
+        {
+          "title": "외국인·명품 효과에…백화점 3사 시총 16조원 넘어섰다",
+          "link": "http://www.fnnews.com/news/202606231433529017",
+          "pubDate": "Tue, 23 Jun 2026 18:10:00 +0900"
+        }
+      ]
     },
     {
       "code": "128940",
@@ -3538,7 +3682,23 @@
       "volume_dry": false,
       "sector_strong": true,
       "large_cap": true,
-      "news": []
+      "news": [
+        {
+          "title": "삼성전기 삼화콘덴서 폭등, MLCC가 뭐길래 / 전자산업의 쌀, 판도를 바꾸...",
+          "link": "http://topclass.chosun.com/news/articleView.html?idxno=36419",
+          "pubDate": "Tue, 23 Jun 2026 17:50:00 +0900"
+        },
+        {
+          "title": "삼화콘덴서 주가, 6월 23일 장중 148,800원 10.90% 하락",
+          "link": "https://www.joongangenews.com/news/articleView.html?idxno=527654",
+          "pubDate": "Tue, 23 Jun 2026 14:18:00 +0900"
+        },
+        {
+          "title": "삼화콘덴서 주가, 6월 23일 장중 151,500원 9.28% 하락",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16107785",
+          "pubDate": "Tue, 23 Jun 2026 10:56:00 +0900"
+        }
+      ]
     },
     {
       "code": "017960",
