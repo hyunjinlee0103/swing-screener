@@ -161,9 +161,10 @@ def get_kospi_20d_return(end: datetime) -> float:
 
 # ── 4. 네이버 뉴스 ──────────────────────────────────────────────────────────
 def fetch_news(name: str, n: int = 3) -> List[Dict]:
-    client_id     = os.environ.get("NAVER_CLIENT_ID", "")
-    client_secret = os.environ.get("NAVER_CLIENT_SECRET", "")
+    client_id     = os.environ.get("NAVER_CLIENT_ID", "").strip()
+    client_secret = os.environ.get("NAVER_CLIENT_SECRET", "").strip()
     if not client_id or not client_secret:
+        log.warning("NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 환경변수가 설정되지 않아 뉴스를 건너뜁니다.")
         return []
     try:
         url = (f"https://openapi.naver.com/v1/search/news.json"
@@ -173,6 +174,7 @@ def fetch_news(name: str, n: int = 3) -> List[Dict]:
             "X-Naver-Client-Secret": client_secret,
         }, timeout=10)
         if not r.ok:
+            log.warning(f"뉴스 API 오류 ({name}): HTTP {r.status_code} — {r.text[:200]}")
             return []
         return [
             {
