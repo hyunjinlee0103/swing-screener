@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29 14:39:34",
+  "updated_at": "2026-06-29 17:18:57",
   "kospi_ret_20d": -4.48,
   "stocks": [
     {
@@ -39,19 +39,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "&quot;반도체 쏠림 완화 가능성&quot;…하반기 증시, 수급 확산 여부 주목",
-          "link": "https://www.newsis.com/view/NISX20260629_0003687905",
-          "pubDate": "Tue, 30 Jun 2026 00:07:00 +0900"
+          "title": "미 증시 메모리주 약세…삼성·SK하이닉스 증설 전망 영향",
+          "link": "https://www.tokenpost.kr/news/breaking/373726",
+          "pubDate": "Tue, 30 Jun 2026 02:00:00 +0900"
         },
         {
-          "title": "신한투자증권, 단일종목 레버리지 ETF 분석 리포트 발간 &quot;거래 급증 속 ...",
-          "link": "https://www.mediafine.co.kr/news/articleView.html?idxno=82165",
-          "pubDate": "Mon, 29 Jun 2026 23:58:00 +0900"
+          "title": "단일종목 ETF, 반도체주 변동성 확산 주범? 시장 분석은 '아니다'",
+          "link": "https://www.tokenpost.kr/news/market/373725",
+          "pubDate": "Tue, 30 Jun 2026 01:56:00 +0900"
         },
         {
-          "title": "[오늘과 내일/김창덕]마이크론과 키옥시아의 약진이 두려운 이유",
-          "link": "https://www.donga.com/news/Opinion/article/all/20260629/134205315/2",
-          "pubDate": "Mon, 29 Jun 2026 23:16:00 +0900"
+          "title": "‘메가 프로젝트’로 낙폭 줄였지만… 외인 탈출에 뒷심 빠진 코스피",
+          "link": "https://www.kmib.co.kr/article/view.asp?arcid=1782723320&code=11151200&cp=nv",
+          "pubDate": "Tue, 30 Jun 2026 00:34:00 +0900"
         }
       ]
     },
@@ -2050,6 +2050,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "코스피 출렁이는데 백화점株는 ‘함박웃음’",
+          "link": "https://www.chosun.com/economy/money/2026/06/30/F4FEB24D6REGJNYVN2CRLY4S7I/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+          "pubDate": "Tue, 30 Jun 2026 00:37:00 +0900"
+        },
+        {
           "title": "밸류업 올라탄 롯데쇼핑…컬처웍스까지 온기 퍼질까 [엔터코노미]",
           "link": "https://news.mtn.co.kr/news-detail/2026062912021024540",
           "pubDate": "Mon, 29 Jun 2026 17:06:00 +0900"
@@ -2058,11 +2063,6 @@
           "title": "코스피 출렁일 때 80% 급등...늘어난 명품 소비와 외국인 관광객에 웃는...",
           "link": "https://www.chosun.com/economy/money/2026/06/29/WFCYQ6DZZNF4VMGMACOAPR33NQ/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
           "pubDate": "Mon, 29 Jun 2026 08:54:00 +0900"
-        },
-        {
-          "title": "[핀포인트] [롯데쇼핑] 3000억 묶인 한샘 투자…해법 찾기 나선 재무통",
-          "link": "https://news.dealsitetv.com/articles/171846",
-          "pubDate": "Mon, 29 Jun 2026 07:02:00 +0900"
         }
       ]
     },
@@ -8238,6 +8238,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "VA, 미래산업에 560만 달러 보조금 승인",
+          "link": "http://www.koreatimes.com/article/1619347",
+          "pubDate": "Tue, 30 Jun 2026 01:10:00 +0900"
+        },
+        {
           "title": "비핵심 덜고 미래 키운다…LG화학, '4대 신성장축' 시동",
           "link": "http://www.wikileaks-kr.org/news/articleView.html?idxno=189185",
           "pubDate": "Mon, 29 Jun 2026 18:04:00 +0900"
@@ -8246,11 +8251,6 @@
           "title": "[CEO인사이트] 스페이스X 상장…'역대급 IPO'의 여파는?",
           "link": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005868374",
           "pubDate": "Mon, 29 Jun 2026 17:34:00 +0900"
-        },
-        {
-          "title": "증권가 &quot;메가프로젝트, 증시에 '플러스 알파'…관건은 '실적' 연결&quot;",
-          "link": "https://www.news1.kr/finance/general-stock/6211893",
-          "pubDate": "Mon, 29 Jun 2026 17:28:00 +0900"
         }
       ]
     },
