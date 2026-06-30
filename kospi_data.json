@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30 11:24:21",
+  "updated_at": "2026-06-30 13:30:06",
   "kospi_ret_20d": -3.69,
   "stocks": [
     {
@@ -39,19 +39,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "‘1인당 95억’…SK하이닉스가 픽한 이 회사, 직원들 스톡옵션 ‘대박’",
+          "link": "https://www.munhwa.com/article/11599363?ref=naver",
+          "pubDate": "Tue, 30 Jun 2026 22:44:00 +0900"
+        },
+        {
+          "title": "[공매도 브리핑] 삼성전자 공매도 3,939억…오뚜기 비중 47.68%",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16118379",
+          "pubDate": "Tue, 30 Jun 2026 21:04:00 +0900"
+        },
+        {
           "title": "‘독하다 독해’ 국장에서 주식 파는 외국인들…금융위기·코로나 때보...",
           "link": "https://biz.heraldcorp.com/article/10793318?ref=naver",
           "pubDate": "Tue, 30 Jun 2026 20:41:00 +0900"
-        },
-        {
-          "title": "시가총액",
-          "link": "https://www.danbinews.com/news/articleView.html?idxno=33296",
-          "pubDate": "Tue, 30 Jun 2026 20:38:00 +0900"
-        },
-        {
-          "title": "외국인 22조 던졌다··· 삼전닉스 공방전, 어디에 베팅할까",
-          "link": "https://www.greenpostkorea.co.kr/news/articleView.html?idxno=307011",
-          "pubDate": "Tue, 30 Jun 2026 20:22:00 +0900"
         }
       ]
     },
@@ -403,13 +403,13 @@
           "pubDate": "Tue, 30 Jun 2026 16:42:00 +0900"
         },
         {
-          "title": "분기말 수급변동 속 반도체가 끌어올렸다",
-          "link": "http://www.newstomato.com/ReadNews.aspx?no=1305686&inflow=N",
+          "title": "코스피, 사흘 만에 반등 8400 회복…코스닥은 하락",
+          "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=310177",
           "pubDate": "Tue, 30 Jun 2026 16:30:00 +0900"
         },
         {
-          "title": "코스피, 사흘 만에 반등 8400 회복…코스닥은 하락",
-          "link": "https://www.pointdaily.co.kr/news/articleView.html?idxno=310177",
+          "title": "분기말 수급변동 속 반도체가 끌어올렸다",
+          "link": "http://www.newstomato.com/ReadNews.aspx?no=1305686&inflow=N",
           "pubDate": "Tue, 30 Jun 2026 16:30:00 +0900"
         }
       ]
