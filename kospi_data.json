@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01 11:40:32",
+  "updated_at": "2026-07-01 16:11:32",
   "kospi_ret_20d": -3.89,
   "stocks": [
     {
@@ -75,6 +75,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[심층분석] 코스피 급락 이끈 '반도체·2차전지'…차트가 경고하는 다음...",
+          "link": "https://www.thefairnews.co.kr/news/articleView.html?idxno=81012",
+          "pubDate": "Thu, 02 Jul 2026 00:00:00 +0900"
+        },
+        {
           "title": "[종목분석] 삼성전기 목표가 76% 상향…AI MLCC·FCBGA 공급난",
           "link": "https://www.topstarnews.net/news/articleView.html?idxno=16119800",
           "pubDate": "Wed, 01 Jul 2026 20:38:00 +0900"
@@ -83,11 +88,6 @@
           "title": "“이 삼전은 300만원까지 갑니다”…삼성전기 목표가 줄상향 이유",
           "link": "https://www.mk.co.kr/article/12088149",
           "pubDate": "Wed, 01 Jul 2026 20:07:00 +0900"
-        },
-        {
-          "title": "[이슈플러스] 코스피 8,300선 '주춤'...국민연금 리밸런싱 영향?",
-          "link": "https://www.ytn.co.kr/_ln/0102_202607011909565507",
-          "pubDate": "Wed, 01 Jul 2026 19:09:00 +0900"
         }
       ]
     },
@@ -4278,6 +4278,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[상한가 종목] 대원전선-금호건설 이어 위메이드-비나텍 등 마감",
+          "link": "http://www.econonews.co.kr/news/articleView.html?idxno=440519",
+          "pubDate": "Wed, 01 Jul 2026 21:30:00 +0900"
+        },
+        {
           "title": "7월 1일 코스피·코스닥 상한가 무려 28종목, 호남 반도체 기대감",
           "link": "https://www.junggi.co.kr/news/articleView.html?idxno=36986",
           "pubDate": "Wed, 01 Jul 2026 18:08:00 +0900"
@@ -4286,11 +4291,6 @@
           "title": "[오늘의증시] 반도체 쉬어가자 코스피 2% 급락…하반기 첫날 '순환매' 장...",
           "link": "https://news.ifm.kr/news/articleView.html?idxno=474194",
           "pubDate": "Wed, 01 Jul 2026 17:38:00 +0900"
-        },
-        {
-          "title": "[1일 특징주] 매드업, 코스닥 상장 첫날 26%↑",
-          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=845773",
-          "pubDate": "Wed, 01 Jul 2026 17:30:00 +0900"
         }
       ]
     },
