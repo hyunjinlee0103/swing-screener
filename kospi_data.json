@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02 10:19:21",
+  "updated_at": "2026-07-02 13:21:13",
   "kospi_ret_20d": -6.28,
   "stocks": [
     {
@@ -93,19 +93,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "상반기 외국인, 삼전닉스 130조원 팔았다…순매도 비중 87% 차지 [투자36...",
-          "link": "https://biz.heraldcorp.com/article/10796449?ref=naver",
-          "pubDate": "Thu, 02 Jul 2026 19:41:00 +0900"
+          "title": "코스피 8% ‘뚝’…급락장에 초고수들이 저가매수한 ‘톱3’는?",
+          "link": "https://biz.heraldcorp.com/article/10796655?ref=naver",
+          "pubDate": "Thu, 02 Jul 2026 22:26:00 +0900"
         },
         {
-          "title": "ETF 500조 시대…‘반도체 레버리지’ 수익 상위권 휩쓸어",
-          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20260703.22004000838",
-          "pubDate": "Thu, 02 Jul 2026 19:40:00 +0900"
+          "title": "코스피 8,000선 붕괴…반도체주 급락에 매도세 확산",
+          "link": "https://www.tokenpost.kr/news/market/374585",
+          "pubDate": "Thu, 02 Jul 2026 22:16:00 +0900"
         },
         {
-          "title": "애플·오픈AI 이어 메타까지…국내증시 시총 하루새 569조 증발",
-          "link": "https://www.sedaily.com/article/20063240?ref=naver",
-          "pubDate": "Thu, 02 Jul 2026 18:32:00 +0900"
+          "title": "[투자전략] 삼성전자·SK하이닉스 EPS 상향, 방산·조선·자동차 소외",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16121486",
+          "pubDate": "Thu, 02 Jul 2026 21:44:00 +0900"
         }
       ]
     },
@@ -434,7 +434,7 @@
       "large_cap": true,
       "news": [
         {
-          "title": "&quot;중앙그룹 악재 지우고, 두나무 품었다…하나금융 '올해 순이익 4.4조' 거...",
+          "title": "&quot;2분기 순이익 1.2조·연간 4.4조 돌파 전망…하나금융지주, 충당금 악재...",
           "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=269028",
           "pubDate": "Thu, 02 Jul 2026 19:36:00 +0900"
         },
@@ -2049,6 +2049,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[투자전략] 삼성전자·SK하이닉스 EPS 상향, 방산·조선·자동차 소외",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16121486",
+          "pubDate": "Thu, 02 Jul 2026 21:44:00 +0900"
+        },
+        {
           "title": "[급등락주 짚어보기] ‘호남 반도체 메가 프로젝트’ 기대에 진흥기업 ...",
           "link": "https://www.etoday.co.kr/news/view/2599752",
           "pubDate": "Thu, 02 Jul 2026 17:56:00 +0900"
@@ -2057,11 +2062,6 @@
           "title": "코스피 8천선 붕괴…반도체 쇼크 덮쳤다",
           "link": "https://www.koreareport.co.kr/news/articleView.html?idxno=51241",
           "pubDate": "Thu, 02 Jul 2026 16:46:00 +0900"
-        },
-        {
-          "title": "[특징주] 콘텐트리중앙, 거래재개 후 이틀째 하한가…겹악재에 이탈 가...",
-          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1714915",
-          "pubDate": "Thu, 02 Jul 2026 16:18:00 +0900"
         }
       ]
     },
