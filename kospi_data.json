@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03 10:14:53",
+  "updated_at": "2026-07-03 13:23:20",
   "kospi_ret_20d": 7.3,
   "stocks": [
     {
@@ -39,19 +39,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "코스피 사이드카, 역대 91회 중 올해만 31회...변동성 장세 지속",
-          "link": "https://www.wolyo.co.kr/news/articleView.html?idxno=314546",
-          "pubDate": "Fri, 03 Jul 2026 19:00:00 +0900"
+          "title": "코스피, 사이드카 하루 만에 'V자' 반등...삼성전자·SK하이닉스 동반 폭...",
+          "link": "http://coinreaders.com/245999",
+          "pubDate": "Fri, 03 Jul 2026 22:22:00 +0900"
         },
         {
-          "title": "&quot;미안하다 못 믿어서&quot;…하루 18% 널뛰기에 주주들 '아찔'",
-          "link": "http://www.inews24.com/view/1982397",
-          "pubDate": "Fri, 03 Jul 2026 18:50:00 +0900"
+          "title": "삼성전자·SK하이닉스 급락 뒤 급반등, 저가 매수세 유입으로 주가 회복",
+          "link": "https://www.tokenpost.kr/news/market/374895",
+          "pubDate": "Fri, 03 Jul 2026 22:14:00 +0900"
         },
         {
-          "title": "219만→204만→245만원…“이게 하이닉스야 코인이야” 비명 터졌다 [내...",
-          "link": "https://www.seoul.co.kr/news/economy/securities/2026/07/03/20260703500247?wlog_tag3=naver",
-          "pubDate": "Fri, 03 Jul 2026 18:46:00 +0900"
+          "title": "채권시장 큰손 SK하이닉스…미래에셋 1.3조 장기 CP 전량 인수",
+          "link": "http://www.joseilbo.com/news/news_read.php?uid=571273&class=18&grp=",
+          "pubDate": "Fri, 03 Jul 2026 22:13:00 +0900"
         }
       ]
     },
@@ -74,6 +74,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[26.7.3 증시 인싸잇] 코스피, 기관 4조 순매수에 급반등",
+          "link": "https://www.mediawatch.kr/news/article.html?no=260284",
+          "pubDate": "Fri, 03 Jul 2026 21:52:00 +0900"
+        },
+        {
           "title": "반도체 ETF 중 올해 수익률 1위…급등주 덜고 성장주 담아 주목 [ETF 줌인...",
           "link": "https://www.sedaily.com/article/20063657?ref=naver",
           "pubDate": "Fri, 03 Jul 2026 18:19:00 +0900"
@@ -81,11 +86,6 @@
         {
           "title": "'고점 대비 30%↓' 삼전닉스, 향방 최대 관심사 부상",
           "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=848132",
-          "pubDate": "Fri, 03 Jul 2026 18:12:00 +0900"
-        },
-        {
-          "title": "[마감 시황] 코스피, ​기관 '폭풍 매수' 속 반도체 쌍두마차 급등 8000선...",
-          "link": "https://www.businesskorea.co.kr/news/articleView.html?idxno=272466",
           "pubDate": "Fri, 03 Jul 2026 18:12:00 +0900"
         }
       ]
@@ -144,6 +144,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[26.7.3 증시 인싸잇] 코스피, 기관 4조 순매수에 급반등",
+          "link": "https://www.mediawatch.kr/news/article.html?no=260284",
+          "pubDate": "Fri, 03 Jul 2026 21:52:00 +0900"
+        },
+        {
           "title": "반도체 ETF 중 올해 수익률 1위…급등주 덜고 성장주 담아 주목 [ETF 줌인...",
           "link": "https://www.sedaily.com/article/20063657?ref=naver",
           "pubDate": "Fri, 03 Jul 2026 18:19:00 +0900"
@@ -152,11 +157,6 @@
           "title": "'고점 대비 30%↓' 삼전닉스, 향방 최대 관심사 부상",
           "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=848132",
           "pubDate": "Fri, 03 Jul 2026 18:12:00 +0900"
-        },
-        {
-          "title": "[오늘의 ABC 뉴스룸] &quot;미치지 않고서야 이럴 수가 있습니까?&quot; 연초 20만 ...",
-          "link": "https://www.ajunews.com/view/20260701164335254",
-          "pubDate": "Fri, 03 Jul 2026 18:10:00 +0900"
         }
       ]
     },
@@ -1275,19 +1275,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "‘나만 무서워?’ 1년 만에 무려 431% 급증…‘레버리지 ETF’, 이렇게 많...",
+          "link": "https://biz.heraldcorp.com/article/10797419?ref=naver",
+          "pubDate": "Fri, 03 Jul 2026 21:41:00 +0900"
+        },
+        {
+          "title": "'믿을맨' 삼전닉스 반등…메타발 업황 우려 이겨낼까 [종목+]",
+          "link": "https://www.hankyung.com/article/2026070346796",
+          "pubDate": "Fri, 03 Jul 2026 20:01:00 +0900"
+        },
+        {
           "title": "주식부자 늘고 수억 성과급도 받고…부자 많아지니 백화점 주가 신나겠...",
           "link": "https://biz.heraldcorp.com/article/10797434?ref=naver",
           "pubDate": "Fri, 03 Jul 2026 18:40:00 +0900"
-        },
-        {
-          "title": "코스피, 5.76% 급반등 8,000선 회복...장중 변동폭 758p 달해",
-          "link": "https://www.delighti.co.kr/news/articleView.html?idxno=118588",
-          "pubDate": "Fri, 03 Jul 2026 18:06:00 +0900"
-        },
-        {
-          "title": "역대급 변동성…호실적 증권업계는 ‘표정관리’",
-          "link": "https://www.mk.co.kr/article/12090133",
-          "pubDate": "Fri, 03 Jul 2026 18:01:00 +0900"
         }
       ]
     },
