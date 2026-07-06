@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06 14:03:56",
+  "updated_at": "2026-07-06 17:30:09",
   "kospi_ret_20d": -0.56,
   "stocks": [
     {
@@ -1206,6 +1206,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "'삼성전자 2분기 실적발표일' 시간 언제? 목표주가 60만 원 육박",
+          "link": "https://www.gukjenews.com/news/articleView.html?idxno=3627833",
+          "pubDate": "Tue, 07 Jul 2026 00:10:00 +0900"
+        },
+        {
           "title": "SK하이닉스 ADR, 1주에 얼마야?…꼭 알아야 할 계산법, 꼼꼼하게 챙겨봐...",
           "link": "https://biz.heraldcorp.com/article/10799128?ref=naver",
           "pubDate": "Mon, 06 Jul 2026 20:40:00 +0900"
@@ -1214,11 +1219,6 @@
           "title": "&quot;홀짝게임 같다&quot; 오를까, 내릴까…내일 삼성전자 실적발표",
           "link": "http://www.inews24.com/view/1982949",
           "pubDate": "Mon, 06 Jul 2026 20:01:00 +0900"
-        },
-        {
-          "title": "“주가는 신저가, 실적은 사상 최대” ‘빈집’으로 꼽힌 ‘이 주식’…...",
-          "link": "https://www.sedaily.com/article/20064444?ref=naver",
-          "pubDate": "Mon, 06 Jul 2026 19:36:00 +0900"
         }
       ]
     },
