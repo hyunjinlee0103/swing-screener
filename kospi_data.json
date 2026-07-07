@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07 10:41:12",
+  "updated_at": "2026-07-07 16:13:05",
   "kospi_ret_20d": -0.96,
   "stocks": [
     {
@@ -75,6 +75,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "우리는 지금, 에베레스트를 오르고 있는지도 모른다",
+          "link": "https://www.kmib.co.kr/article/view.asp?arcid=1783322100&code=11151300&cp=nv",
+          "pubDate": "Wed, 08 Jul 2026 00:11:00 +0900"
+        },
+        {
           "title": "삼성전자 사상 최대 실적에도… 코스피 장중 8% 급락",
           "link": "https://www.donga.com/news/Economy/article/all/20260707/134251784/1",
           "pubDate": "Tue, 07 Jul 2026 18:34:00 +0900"
@@ -83,11 +88,6 @@
           "title": "삼성전자 '어닝 서프라이즈'에도 반도체주 폭락…'셀온'에 멍든 증시",
           "link": "https://www.kpinews.kr/newsView/1065597828931907",
           "pubDate": "Tue, 07 Jul 2026 17:46:00 +0900"
-        },
-        {
-          "title": "[마감시황] 반도체 레버리지 ETF가 급락 키웠다…코스피 5% 추락",
-          "link": "https://www.newspim.com/news/view/20260707001058",
-          "pubDate": "Tue, 07 Jul 2026 17:13:00 +0900"
         }
       ]
     },
@@ -398,6 +398,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[26.7.7 증시 인싸잇] 코스피 4.91% ↓… 서킷브레이커 발동에도 7600선 마...",
+          "link": "https://www.mediawatch.kr/news/article.html?no=260310",
+          "pubDate": "Tue, 07 Jul 2026 23:16:00 +0900"
+        },
+        {
           "title": "반도체주 크게 흔들리는데... '피난처'로 급부상 중인 이 업종",
           "link": "https://www.hankookilbo.com/news/article/A2026070715400003259?did=NA",
           "pubDate": "Tue, 07 Jul 2026 17:01:00 +0900"
@@ -406,11 +411,6 @@
           "title": "코스피, 장중 서킷브레이커 끝 7650선 마감…반도체 급락에 5% 가까이 밀...",
           "link": "https://www.ziksir.com/news/articleView.html?idxno=139378",
           "pubDate": "Tue, 07 Jul 2026 16:46:00 +0900"
-        },
-        {
-          "title": "[코스피 지수선물 옵션] 선물시장도 AI 차익실현…삼성전자·SK하이닉스...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=466362",
-          "pubDate": "Tue, 07 Jul 2026 16:40:00 +0900"
         }
       ]
     },
@@ -1025,6 +1025,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[26.7.7 증시 인싸잇] 코스피 4.91% ↓… 서킷브레이커 발동에도 7600선 마...",
+          "link": "https://www.mediawatch.kr/news/article.html?no=260310",
+          "pubDate": "Tue, 07 Jul 2026 23:16:00 +0900"
+        },
+        {
           "title": "서킷브레이커에도 빛난 화장품주…업종지수 3.44% 상승",
           "link": "https://www.thebk.co.kr/news/articleView.html?idxno=310457",
           "pubDate": "Tue, 07 Jul 2026 19:06:00 +0900"
@@ -1033,11 +1038,6 @@
           "title": "삼성전자 89조 벌었는데 주가는 7% 급락··· 반도체에 무슨 일이?",
           "link": "https://www.greenpostkorea.co.kr/news/articleView.html?idxno=307055",
           "pubDate": "Tue, 07 Jul 2026 18:14:00 +0900"
-        },
-        {
-          "title": "[오늘의증시] 삼성전자 실적에도 코스피 급락…7,600선까지 밀린 증시",
-          "link": "https://news.ifm.kr/news/articleView.html?idxno=474560",
-          "pubDate": "Tue, 07 Jul 2026 16:58:00 +0900"
         }
       ]
     },
