@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-08 08:01:20",
+  "updated_at": "2026-07-08 12:07:49",
   "kospi_ret_20d": -6.66,
   "stocks": [
     {
@@ -363,19 +363,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "또 사이드카 울렸다…코스피 사흘째 급락 '7200선' 후퇴",
-          "link": "https://www.koreareport.co.kr/news/articleView.html?idxno=51344",
-          "pubDate": "Wed, 08 Jul 2026 17:02:00 +0900"
+          "title": "은행주, 실적 안정성 앞세워 변동성 장세 대안 부상",
+          "link": "http://www.bizwnews.com/news/articleView.html?idxno=140261",
+          "pubDate": "Wed, 08 Jul 2026 21:22:00 +0900"
         },
         {
-          "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 선물 동반 하락…시장 경...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=466762",
-          "pubDate": "Wed, 08 Jul 2026 16:40:00 +0900"
+          "title": "[특징주] KB금융, 자사주 25만주 직접 매수 부각…주주환원 기대 재부각",
+          "link": "https://www.tokenpost.kr/news/economy/375966",
+          "pubDate": "Wed, 08 Jul 2026 18:58:00 +0900"
         },
         {
-          "title": "[특징주] 은행주, 실적 기대에 상승 후 코스피 급락에 반락 마감(종합)",
-          "link": "https://www.yna.co.kr/view/AKR20260708055351008?input=1195m",
-          "pubDate": "Wed, 08 Jul 2026 16:21:00 +0900"
+          "title": "[특징주] 코스피 기업들, 자사주 매수 '올인'… 9일 하루 34개 종목 '사자...",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=709522",
+          "pubDate": "Wed, 08 Jul 2026 18:32:00 +0900"
         }
       ]
     },
@@ -452,6 +452,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[공매도 브리핑] 삼성전자 1,711억…ESR켄달스퀘어 48.67%",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16128007",
+          "pubDate": "Wed, 08 Jul 2026 19:04:00 +0900"
+        },
+        {
           "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 선물 동반 하락…시장 경...",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=466762",
           "pubDate": "Wed, 08 Jul 2026 16:40:00 +0900"
@@ -460,11 +465,6 @@
           "title": "보험사 영업 잘해 이익 쌓아도 못 푸는 해약환급준비금 58조",
           "link": "https://biz.heraldcorp.com/article/10802181?ref=naver",
           "pubDate": "Wed, 08 Jul 2026 11:42:00 +0900"
-        },
-        {
-          "title": "돈 많이 벌어도 배당 못하는 보험사들…‘진짜 속사정’ 뭐길래",
-          "link": "https://biz.heraldcorp.com/article/10801550?ref=naver",
-          "pubDate": "Wed, 08 Jul 2026 09:01:00 +0900"
         }
       ]
     },
@@ -1763,6 +1763,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "은행주, 실적 안정성 앞세워 변동성 장세 대안 부상",
+          "link": "http://www.bizwnews.com/news/articleView.html?idxno=140261",
+          "pubDate": "Wed, 08 Jul 2026 21:22:00 +0900"
+        },
+        {
           "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 선물 동반 하락…시장 경...",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=466762",
           "pubDate": "Wed, 08 Jul 2026 16:40:00 +0900"
@@ -1771,11 +1776,6 @@
           "title": "하림지주, 주가하락에 EB 교환 '스톱'…792억 상환부담 부상",
           "link": "https://www.bloter.net/news/articleView.html?idxno=667612",
           "pubDate": "Wed, 08 Jul 2026 15:55:00 +0900"
-        },
-        {
-          "title": "은행 임원만 자사주식 매수 웃었다…신한지주 3.3억 평가익 견인",
-          "link": "https://www.kbanker.co.kr/news/articleView.html?idxno=225382",
-          "pubDate": "Wed, 08 Jul 2026 14:00:00 +0900"
         }
       ]
     },
@@ -2086,6 +2086,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[특징주] 트럼프 &quot;이란 종전 끝나&quot;…애프터마켓서 삼전닉스 10% 급락",
+          "link": "https://www.newspim.com/news/view/20260708001235",
+          "pubDate": "Wed, 08 Jul 2026 17:58:00 +0900"
+        },
+        {
           "title": "오후 장중...코스피 '출렁', 韓 반도체 &amp; AI인프라주 '추락'",
           "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=167856",
           "pubDate": "Wed, 08 Jul 2026 14:18:00 +0900"
@@ -2094,11 +2099,6 @@
           "title": "가온전선 주가, 7월 8일 장중 237,000원 8.14% 하락",
           "link": "https://www.joongangenews.com/news/articleView.html?idxno=531423",
           "pubDate": "Wed, 08 Jul 2026 11:40:00 +0900"
-        },
-        {
-          "title": "가온전선 주가, 7월 8일 장중 238,500원 7.56% 하락",
-          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16127472",
-          "pubDate": "Wed, 08 Jul 2026 10:00:00 +0900"
         }
       ]
     },
