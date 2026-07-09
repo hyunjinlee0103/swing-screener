@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09 10:46:27",
+  "updated_at": "2026-07-09 16:17:55",
   "kospi_ret_20d": -10.24,
   "stocks": [
     {
@@ -363,6 +363,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "&quot;충당금 폭탄 비켜갔다…하나금융, NIM 날개 달고 2분기 1.27조 '순항'&quot;",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=269495",
+          "pubDate": "Thu, 09 Jul 2026 20:24:00 +0900"
+        },
+        {
           "title": "[특징주] KB금융·신풍 등 코스피 41개사, 10일 자기주식 매수 신청",
           "link": "https://www.newstnt.com/news/articleView.html?idxno=709682",
           "pubDate": "Thu, 09 Jul 2026 18:46:00 +0900"
@@ -371,11 +376,6 @@
           "title": "코스피 흔들릴때 은행주는 웃었다…변동장서 ‘방어주’ 부각",
           "link": "https://www.sedaily.com/article/20065930?ref=naver",
           "pubDate": "Thu, 09 Jul 2026 17:55:00 +0900"
-        },
-        {
-          "title": "반도체 흔들리자 은행주로 뭉칫돈… &quot;저평가·배당매력 부각&quot;",
-          "link": "https://www.ngetnews.com/news/articleView.html?idxno=551261",
-          "pubDate": "Thu, 09 Jul 2026 17:54:00 +0900"
         }
       ]
     },
@@ -1655,19 +1655,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[공시] 금호건설 '거래정지 예고', RFHIC '투자주의' 등...49건",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=709697",
+          "pubDate": "Thu, 09 Jul 2026 20:32:00 +0900"
+        },
+        {
+          "title": "삼성카드, 종가 급등→투자주의종목 지정 예고",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16129247",
+          "pubDate": "Thu, 09 Jul 2026 20:30:00 +0900"
+        },
+        {
           "title": "코스피 흔들릴때 은행주는 웃었다…변동장서 ‘방어주’ 부각",
           "link": "https://www.sedaily.com/article/20065930?ref=naver",
           "pubDate": "Thu, 09 Jul 2026 17:55:00 +0900"
-        },
-        {
-          "title": "[코스피 지수선물 옵션] 반도체 선물 강세…SK하이닉스·삼성전자 선두...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=467151",
-          "pubDate": "Thu, 09 Jul 2026 16:36:00 +0900"
-        },
-        {
-          "title": "은행주, 호실적·주주환원 기대에 '강세'…방어주 매력도 부각",
-          "link": "https://www.cstimes.com/news/articleView.html?idxno=712838",
-          "pubDate": "Thu, 09 Jul 2026 11:30:00 +0900"
         }
       ]
     },
@@ -2964,19 +2964,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[공시] 금호건설 '거래정지 예고', RFHIC '투자주의' 등...49건",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=709697",
+          "pubDate": "Thu, 09 Jul 2026 20:32:00 +0900"
+        },
+        {
+          "title": "제일기획, 투자주의종목 지정→단기 변동성 확대 우려",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16129256",
+          "pubDate": "Thu, 09 Jul 2026 20:32:00 +0900"
+        },
+        {
           "title": "제일기획, 기조적 성장·주주환원 주목-흥국증권",
           "link": "https://www.mt.co.kr/stock/2026/07/09/2026070908440751388",
           "pubDate": "Thu, 09 Jul 2026 08:50:00 +0900"
-        },
-        {
-          "title": "제일기획, 실적 정상화 본격화…AI·비계열 확장 주목-흥국",
-          "link": "https://www.edaily.co.kr/news/newspath.asp?newsid=02568246645512880",
-          "pubDate": "Thu, 09 Jul 2026 07:58:00 +0900"
-        },
-        {
-          "title": "삼성전자 주가 2.6배·삼성전기 8배 폭증...삼성에피스홀딩스·바이오로...",
-          "link": "http://www.consumernews.co.kr/news/articleView.html?idxno=758568",
-          "pubDate": "Thu, 02 Jul 2026 06:10:00 +0900"
         }
       ]
     },
