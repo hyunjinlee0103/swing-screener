@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13 11:41:20",
+  "updated_at": "2026-07-13 16:15:43",
   "kospi_ret_20d": -22.0,
   "stocks": [
     {
@@ -1333,6 +1333,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "호반에 지분 또 내준 한진칼, 다시 지배구조 시험대 오르나",
+          "link": "https://www.newsworks.co.kr/news/articleView.html?idxno=847094",
+          "pubDate": "Tue, 14 Jul 2026 00:16:00 +0900"
+        },
+        {
           "title": "[7월14일자] 비즈니스포스트 아침의 주요기사",
           "link": "https://www.businesspost.co.kr/BP?command=article_view&num=442251",
           "pubDate": "Mon, 13 Jul 2026 20:50:00 +0900"
@@ -1341,11 +1346,6 @@
           "title": "호반 김상열, 조원태 지분 0.4%p 턱밑 추격...이번엔 대한항공 노리나",
           "link": "https://www.esgeconomy.com/news/articleView.html?idxno=16028",
           "pubDate": "Mon, 13 Jul 2026 17:26:00 +0900"
-        },
-        {
-          "title": "[코스피 지수선물 옵션] 주식선물도 '반도체 쇼크'…삼성전자·SK하이닉...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=468060",
-          "pubDate": "Mon, 13 Jul 2026 16:50:00 +0900"
         }
       ]
     },
@@ -2337,6 +2337,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[주요공시] 코세스, 비나텍, HD한국조선해양, 자람테크놀로지, 삼성전자...",
+          "link": "https://www.kdpress.co.kr/news/articleView.html?idxno=206876",
+          "pubDate": "Mon, 13 Jul 2026 23:26:00 +0900"
+        },
+        {
           "title": "한화생명, 애큐온 인수로 몸집 키우는데…주주환원은 '흐릿'",
           "link": "https://www.1conomynews.co.kr/news/articleView.html?idxno=49529",
           "pubDate": "Mon, 13 Jul 2026 16:50:00 +0900"
@@ -2345,11 +2350,6 @@
           "title": "[ZD브리핑] 최태원 회장이 밝히는 美 나스닥 ADR 상장 이후 청사진은",
           "link": "https://zdnet.co.kr/view/?no=20260712130850",
           "pubDate": "Sun, 12 Jul 2026 13:09:00 +0900"
-        },
-        {
-          "title": "“삼성화재 너무 올랐다”...투자의견 ‘하향’ 리포트, 왜?",
-          "link": "https://www.mk.co.kr/article/12095439",
-          "pubDate": "Sat, 11 Jul 2026 17:01:00 +0900"
         }
       ]
     },
