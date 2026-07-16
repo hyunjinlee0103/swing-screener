@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16 07:36:43",
+  "updated_at": "2026-07-16 12:10:21",
   "kospi_ret_20d": -24.65,
   "stocks": [
     {
@@ -2054,19 +2054,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "“속도내라” 대통령까지 나선 ‘주가누르기 방지법’, 옥석가리기 ‘시...",
+          "link": "https://biz.heraldcorp.com/article/10811001?ref=naver",
+          "pubDate": "Thu, 16 Jul 2026 21:10:00 +0900"
+        },
+        {
+          "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
+          "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
+          "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
+        },
+        {
           "title": "원가 절감과 고부가가치 제품 다변화…섬유·의류 업종 재평가 국면",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469082",
           "pubDate": "Thu, 16 Jul 2026 15:14:00 +0900"
-        },
-        {
-          "title": "‘주가누르기 방지법’ 수혜 옥석가리기...KCC·한국전력·다우기술 주목",
-          "link": "https://biz.heraldcorp.com/article/10811045?ref=naver",
-          "pubDate": "Thu, 16 Jul 2026 11:43:00 +0900"
-        },
-        {
-          "title": "&quot;믿을 건 든든한 가정상비약&quot;… 동화약품, 흔들리지 않는 현금 창출력 ...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=468979",
-          "pubDate": "Thu, 16 Jul 2026 10:24:00 +0900"
         }
       ]
     },
@@ -2339,19 +2339,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "“속도내라” 대통령까지 나선 ‘주가누르기 방지법’, 옥석가리기 ‘시...",
+          "link": "https://biz.heraldcorp.com/article/10811001?ref=naver",
+          "pubDate": "Thu, 16 Jul 2026 21:10:00 +0900"
+        },
+        {
+          "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
+          "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
+          "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
+        },
+        {
           "title": "F&amp;F홀딩스, '환원율 60%' 약속...열쇠는 F&amp;F 배당",
           "link": "https://www.bloter.net/news/articleView.html?idxno=668282",
           "pubDate": "Thu, 16 Jul 2026 16:26:00 +0900"
-        },
-        {
-          "title": "원가 절감과 고부가가치 제품 다변화…섬유·의류 업종 재평가 국면",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469082",
-          "pubDate": "Thu, 16 Jul 2026 15:14:00 +0900"
-        },
-        {
-          "title": "‘주가누르기 방지법’ 수혜 옥석가리기...KCC·한국전력·다우기술 주목",
-          "link": "https://biz.heraldcorp.com/article/10811045?ref=naver",
-          "pubDate": "Thu, 16 Jul 2026 11:43:00 +0900"
         }
       ]
     },
@@ -2769,6 +2769,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
+          "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
+          "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
+        },
+        {
           "title": "원가 절감과 고부가가치 제품 다변화…섬유·의류 업종 재평가 국면",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469082",
           "pubDate": "Thu, 16 Jul 2026 15:14:00 +0900"
@@ -2777,11 +2782,6 @@
           "title": "미스토홀딩스, 중국 현지 기업 협업… &quot;브랜드 경험 확장&quot;",
           "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=355886",
           "pubDate": "Mon, 13 Jul 2026 21:32:00 +0900"
-        },
-        {
-          "title": "13일 공매도, SK하이닉스에 6466억원 몰려...주가는 하루 새 16% 급락",
-          "link": "https://www.junggi.co.kr/news/articleView.html?idxno=37117",
-          "pubDate": "Mon, 13 Jul 2026 17:44:00 +0900"
         }
       ]
     },
