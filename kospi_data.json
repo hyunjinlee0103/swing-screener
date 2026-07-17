@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17 07:33:40",
+  "updated_at": "2026-07-17 11:54:34",
   "kospi_ret_20d": -24.65,
   "stocks": [
     {
@@ -2662,19 +2662,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "금융·빅테크 총출동…화폐 권력 대이동 [홍익희의 비트코인 이야기]",
+          "link": "https://www.mk.co.kr/article/12095494",
+          "pubDate": "Fri, 17 Jul 2026 21:01:00 +0900"
+        },
+        {
+          "title": "대형 IPO 가뭄 끝나나…업스테이지·메가존 출격에 하반기 반전 기대",
+          "link": "https://www.econovill.com/news/articleView.html?idxno=745494",
+          "pubDate": "Fri, 17 Jul 2026 19:48:00 +0900"
+        },
+        {
           "title": "상반기 IPO 시장, 대형 공모주 부재 속 중소형주 흥행",
           "link": "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=431284",
           "pubDate": "Fri, 17 Jul 2026 16:36:00 +0900"
-        },
-        {
-          "title": "대형 공모주는 찬바람, 중소형은 흥행… 상반기 IPO 양극화 뚜렷",
-          "link": "https://www.seoul.co.kr/news/economy/2026/07/17/20260717500060?wlog_tag3=naver",
-          "pubDate": "Fri, 17 Jul 2026 11:22:00 +0900"
-        },
-        {
-          "title": "상반기 IPO '양극화'…대형은 찬바람, 중소형 공모는 완판",
-          "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008662349&plink=ORI&cooper=NAVER",
-          "pubDate": "Fri, 17 Jul 2026 10:52:00 +0900"
         }
       ]
     },
