@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16 12:10:21",
+  "updated_at": "2026-07-17 07:33:40",
   "kospi_ret_20d": -24.65,
   "stocks": [
     {
@@ -2054,6 +2054,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "KB증권, 7월 셋째주 LG이노텍 등 14종목 매수 추천",
+          "link": "https://www.bigtanews.co.kr/article/view/big202607170004",
+          "pubDate": "Fri, 17 Jul 2026 13:44:00 +0900"
+        },
+        {
           "title": "“속도내라” 대통령까지 나선 ‘주가누르기 방지법’, 옥석가리기 ‘시...",
           "link": "https://biz.heraldcorp.com/article/10811001?ref=naver",
           "pubDate": "Thu, 16 Jul 2026 21:10:00 +0900"
@@ -2062,11 +2067,6 @@
           "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
           "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
           "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
-        },
-        {
-          "title": "원가 절감과 고부가가치 제품 다변화…섬유·의류 업종 재평가 국면",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469082",
-          "pubDate": "Thu, 16 Jul 2026 15:14:00 +0900"
         }
       ]
     },
@@ -2215,6 +2215,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "이재용 주식가치 28조 늘어 59조… 최태원은 10조 클럽 첫 가입",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1169308",
+          "pubDate": "Thu, 16 Jul 2026 22:00:00 +0900"
+        },
+        {
           "title": "“백화점 야호” 외친 증권가…외국인 지갑 열리자 기대감 ‘쑥’",
           "link": "https://www.mk.co.kr/article/12100173",
           "pubDate": "Thu, 16 Jul 2026 13:30:00 +0900"
@@ -2223,11 +2228,6 @@
           "title": "하락장 속 백화점株 재평가…외국인 특수에 황제주 기대감 '솔솔'[stock&amp;...",
           "link": "https://www.newsway.co.kr/news/view?ud=2026071514155506520",
           "pubDate": "Wed, 15 Jul 2026 16:54:00 +0900"
-        },
-        {
-          "title": "[거래소 기관] SK하이닉스 대덕전자 삼성SDI SK 담고 삼성전자 HD현대중...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=468769",
-          "pubDate": "Wed, 15 Jul 2026 16:18:00 +0900"
         }
       ]
     },
@@ -2268,6 +2268,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[주간 거래소 기관] 대덕전자 SK이노베이션 삼성전자우 삼성SDI KB금융 '...",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469219",
+          "pubDate": "Fri, 17 Jul 2026 07:50:00 +0900"
+        },
+        {
           "title": "가온전선 주가, 7월 16일 장중 198,900원 9.80% 하락",
           "link": "https://www.joongangenews.com/news/articleView.html?idxno=533450",
           "pubDate": "Thu, 16 Jul 2026 14:08:00 +0900"
@@ -2276,11 +2281,6 @@
           "title": "가온전선 주가, 7월 16일 장중 194,000원 12.02% 하락",
           "link": "https://www.topstarnews.net/news/articleView.html?idxno=16136404",
           "pubDate": "Thu, 16 Jul 2026 10:28:00 +0900"
-        },
-        {
-          "title": "'전기료' AI 투자 발목 우려에 전력주 줄하락…가온전선 9%↓[핫종목]",
-          "link": "https://www.news1.kr/finance/general-stock/6229961",
-          "pubDate": "Thu, 16 Jul 2026 10:03:00 +0900"
         }
       ]
     },
@@ -2339,6 +2339,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "KB증권, 7월 셋째주 LG이노텍 등 14종목 매수 추천",
+          "link": "https://www.bigtanews.co.kr/article/view/big202607170004",
+          "pubDate": "Fri, 17 Jul 2026 13:44:00 +0900"
+        },
+        {
           "title": "“속도내라” 대통령까지 나선 ‘주가누르기 방지법’, 옥석가리기 ‘시...",
           "link": "https://biz.heraldcorp.com/article/10811001?ref=naver",
           "pubDate": "Thu, 16 Jul 2026 21:10:00 +0900"
@@ -2347,11 +2352,6 @@
           "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
           "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
           "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
-        },
-        {
-          "title": "F&amp;F홀딩스, '환원율 60%' 약속...열쇠는 F&amp;F 배당",
-          "link": "https://www.bloter.net/news/articleView.html?idxno=668282",
-          "pubDate": "Thu, 16 Jul 2026 16:26:00 +0900"
         }
       ]
     },
@@ -2662,19 +2662,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "[EBN 데이터센터] 16일 상승 종목 30選…전통 소비재 급등",
-          "link": "https://www.ebn.co.kr/news/articleView.html?idxno=1716735",
-          "pubDate": "Thu, 16 Jul 2026 16:12:00 +0900"
+          "title": "상반기 IPO 시장, 대형 공모주 부재 속 중소형주 흥행",
+          "link": "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=431284",
+          "pubDate": "Fri, 17 Jul 2026 16:36:00 +0900"
         },
         {
-          "title": "[서울데이터랩]코스피 거래상위 종목 혼조…제약·생활용품 급등, 삼성...",
-          "link": "https://www.seoul.co.kr/news/economy/securities/2026/07/16/20260716500080?wlog_tag3=naver",
-          "pubDate": "Thu, 16 Jul 2026 13:22:00 +0900"
+          "title": "대형 공모주는 찬바람, 중소형은 흥행… 상반기 IPO 양극화 뚜렷",
+          "link": "https://www.seoul.co.kr/news/economy/2026/07/17/20260717500060?wlog_tag3=naver",
+          "pubDate": "Fri, 17 Jul 2026 11:22:00 +0900"
         },
         {
-          "title": "어제도 오늘도 '사이드카'…&quot;팔자&quot; 돌변 외인, 삼전 던지고 뭐 사나 보니",
-          "link": "https://www.mt.co.kr/stock/2026/07/16/2026071611191828646",
-          "pubDate": "Thu, 16 Jul 2026 11:27:00 +0900"
+          "title": "상반기 IPO '양극화'…대형은 찬바람, 중소형 공모는 완판",
+          "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008662349&plink=ORI&cooper=NAVER",
+          "pubDate": "Fri, 17 Jul 2026 10:52:00 +0900"
         }
       ]
     },
@@ -2769,6 +2769,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "KB증권, 7월 셋째주 LG이노텍 등 14종목 매수 추천",
+          "link": "https://www.bigtanews.co.kr/article/view/big202607170004",
+          "pubDate": "Fri, 17 Jul 2026 13:44:00 +0900"
+        },
+        {
           "title": "패션·섬유·뷰티주-형지3사, 비비안 급등, 화섬 종목 약세",
           "link": "http://okfashion.co.kr/detail.php?number=63849&thread=62r04",
           "pubDate": "Thu, 16 Jul 2026 17:36:00 +0900"
@@ -2777,11 +2782,6 @@
           "title": "원가 절감과 고부가가치 제품 다변화…섬유·의류 업종 재평가 국면",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469082",
           "pubDate": "Thu, 16 Jul 2026 15:14:00 +0900"
-        },
-        {
-          "title": "미스토홀딩스, 중국 현지 기업 협업… &quot;브랜드 경험 확장&quot;",
-          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=355886",
-          "pubDate": "Mon, 13 Jul 2026 21:32:00 +0900"
         }
       ]
     },
@@ -3884,19 +3884,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[주간 거래소 기관] 대덕전자 SK이노베이션 삼성전자우 삼성SDI KB금융 '...",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469219",
+          "pubDate": "Fri, 17 Jul 2026 07:50:00 +0900"
+        },
+        {
+          "title": "[주간 거래소 외국인] SK하이닉스 대덕전자 삼성전자 두산에너빌리티 대...",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469218",
+          "pubDate": "Fri, 17 Jul 2026 07:46:00 +0900"
+        },
+        {
           "title": "[거래소 기관] SK하이닉스 대덕전자 삼성SDI SK 담고 삼성전자 HD현대중...",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=468769",
           "pubDate": "Wed, 15 Jul 2026 16:18:00 +0900"
-        },
-        {
-          "title": "주식시장 급락에 연기금 '줍줍'…어떤 종목을 샀을까",
-          "link": "https://www.mt.co.kr/stock/2026/07/15/2026071416300528279",
-          "pubDate": "Tue, 14 Jul 2026 16:48:00 +0900"
-        },
-        {
-          "title": "[거래소 외국인] SK하이닉스 집중 매수…반도체 대장주 다시 주목",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=468370",
-          "pubDate": "Tue, 14 Jul 2026 16:04:00 +0900"
         }
       ]
     },
@@ -4315,6 +4315,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[주간 거래소 기관] 대덕전자 SK이노베이션 삼성전자우 삼성SDI KB금융 '...",
+          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=469219",
+          "pubDate": "Fri, 17 Jul 2026 07:50:00 +0900"
+        },
+        {
           "title": "[서울데이터랩]코스피 거래상위 종목 혼조…제약·생활용품 급등, 삼성...",
           "link": "https://www.seoul.co.kr/news/economy/securities/2026/07/16/20260716500080?wlog_tag3=naver",
           "pubDate": "Thu, 16 Jul 2026 13:22:00 +0900"
@@ -4323,11 +4328,6 @@
           "title": "대원전선 주가, 7월 16일 장중 12,280원 8.35% 하락",
           "link": "https://www.topstarnews.net/news/articleView.html?idxno=16136417",
           "pubDate": "Thu, 16 Jul 2026 10:34:00 +0900"
-        },
-        {
-          "title": "'전기료' AI 투자 발목 우려에 전력주 줄하락…가온전선 9%↓[핫종목]",
-          "link": "https://www.news1.kr/finance/general-stock/6229961",
-          "pubDate": "Thu, 16 Jul 2026 10:03:00 +0900"
         }
       ]
     },
