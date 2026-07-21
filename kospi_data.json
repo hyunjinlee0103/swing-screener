@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21 08:00:39",
+  "updated_at": "2026-07-21 12:13:24",
   "kospi_ret_20d": -17.75,
   "stocks": [
     {
@@ -237,6 +237,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "고점서 60% 빠진 에코프로…블랙록, 추가 매수로 지분 5% 넘겨",
+          "link": "https://www.kukinews.com/article/view/kuk202607210160",
+          "pubDate": "Tue, 21 Jul 2026 17:50:00 +0900"
+        },
+        {
           "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 급등… 주식선물 시장 온...",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=470246",
           "pubDate": "Tue, 21 Jul 2026 16:56:00 +0900"
@@ -245,11 +250,6 @@
           "title": "코스피, 반도체 수출 호조에 6700선 탈환…삼전·닉스 쌍끌이",
           "link": "https://www.newsis.com/view/NISX20260721_0003717339",
           "pubDate": "Tue, 21 Jul 2026 16:07:00 +0900"
-        },
-        {
-          "title": "저가매수 유입에 코스피 6740대로 반도체수출 호조…삼성전자 6%↑",
-          "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=360604",
-          "pubDate": "Tue, 21 Jul 2026 15:56:00 +0900"
         }
       ]
     },
@@ -488,6 +488,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[오늘의 주목주] '삼성전자 지분가치 확대' 삼성물산 주가 8%대 올라, 코...",
+          "link": "https://www.businesspost.co.kr/BP?command=article_view&num=442796",
+          "pubDate": "Tue, 21 Jul 2026 17:38:00 +0900"
+        },
+        {
           "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 급등… 주식선물 시장 온...",
           "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=470246",
           "pubDate": "Tue, 21 Jul 2026 16:56:00 +0900"
@@ -496,11 +501,6 @@
           "title": "삼성화재, 2Q 순익 7천억 안팎 전망···본업 회복·전자 지분가치 눈길",
           "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=700210",
           "pubDate": "Tue, 21 Jul 2026 08:36:00 +0900"
-        },
-        {
-          "title": "하락장서 존재감 커진 '전통적 방어주'",
-          "link": "https://www.hankyung.com/article/2026072051491",
-          "pubDate": "Mon, 20 Jul 2026 18:34:00 +0900"
         }
       ]
     },
@@ -721,6 +721,11 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[코스피] 한화엔진·메리츠금융지주 등 34개사, 22일 자사주 매입",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=711076",
+          "pubDate": "Tue, 21 Jul 2026 18:42:00 +0900"
+        },
+        {
           "title": "“AI 쏠림 풀리면 최소 30% 뛴다”…베스트 애널의 하반기 최선호주는 ...",
           "link": "https://magazine.hankyung.com/business/article/202607082457b",
           "pubDate": "Tue, 21 Jul 2026 17:04:00 +0900"
@@ -729,11 +734,6 @@
           "title": "'순익 11조' 눈앞 4대 금융, 저평가 잔혹사 끊어낼까",
           "link": "https://www.ziksir.com/news/articleView.html?idxno=140695",
           "pubDate": "Tue, 21 Jul 2026 15:00:00 +0900"
-        },
-        {
-          "title": "[코스피] 미원상사·현대모비스 등 35개사, 21일 자사주 매입",
-          "link": "https://www.newstnt.com/news/articleView.html?idxno=710885",
-          "pubDate": "Mon, 20 Jul 2026 18:34:00 +0900"
         }
       ]
     },
@@ -1475,19 +1475,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "[7월22일자] 비즈니스포스트 아침의 주요기사",
+          "link": "https://www.businesspost.co.kr/BP?command=article_view&num=442809",
+          "pubDate": "Tue, 21 Jul 2026 21:20:00 +0900"
+        },
+        {
+          "title": "코스피 롤러코스터에 화장품주도 출렁…토니모리 4천원대로",
+          "link": "https://www.thebk.co.kr/news/articleView.html?idxno=310670",
+          "pubDate": "Tue, 21 Jul 2026 19:06:00 +0900"
+        },
+        {
           "title": "&quot;저평가 소외주 잡을 때&quot;…베스트 애널이 꼽은 하반기 '반등 기대주'[20...",
           "link": "https://magazine.hankyung.com/business/article/202607082157b",
           "pubDate": "Tue, 21 Jul 2026 17:03:00 +0900"
-        },
-        {
-          "title": "[코스피 지수선물 옵션] 삼성전자·SK하이닉스 급등… 주식선물 시장 온...",
-          "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=470246",
-          "pubDate": "Tue, 21 Jul 2026 16:56:00 +0900"
-        },
-        {
-          "title": "아모레퍼시픽, 오너일가 전환우선주 증여 80억 절세…승계 구도 가시화...",
-          "link": "https://www.sejungilbo.com/news/articleView.html?idxno=59321",
-          "pubDate": "Tue, 21 Jul 2026 16:08:00 +0900"
         }
       ]
     },
@@ -1887,19 +1887,19 @@
       "large_cap": true,
       "news": [
         {
-          "title": "BNK금융. JB금융과 합병 제안... 노조·우리사주 등 반발 확산",
-          "link": "https://www.autodaily.co.kr/news/articleView.html?idxno=545936",
-          "pubDate": "Tue, 21 Jul 2026 15:52:00 +0900"
+          "title": "“BNK·JB 합병? 논의 없었다” 정부, 얼라인 제안에 선긋기",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20260722.22003006392",
+          "pubDate": "Tue, 21 Jul 2026 20:05:00 +0900"
         },
         {
-          "title": "김기홍 ‘고수익 경영’ 시험대…JB금융지주, 석 달 새 부실채권 1123억...",
-          "link": "https://sateconomy.co.kr/news/view/1065582417890759",
-          "pubDate": "Tue, 21 Jul 2026 15:26:00 +0900"
+          "title": "단기 이익만 좇는 행동주의펀드에 지역금융 공공성 '흔들'",
+          "link": "https://www.busan.com/view/busan/view.php?code=2026072118212915200",
+          "pubDate": "Tue, 21 Jul 2026 18:24:00 +0900"
         },
         {
-          "title": "JB·BNK금융지주 '합병 추진' 불씨 댕긴 행동주의 펀드… 지역금융 향방...",
-          "link": "https://www.ilyoseoul.co.kr/news/articleView.html?idxno=520104",
-          "pubDate": "Tue, 21 Jul 2026 14:28:00 +0900"
+          "title": "BNK·JB, 자산 200조 메가 지역금융으로 통합?…얼라인-노조 입장 '첨예...",
+          "link": "https://www.ceoscoredaily.com/page/view/2026072114251413987",
+          "pubDate": "Tue, 21 Jul 2026 17:46:00 +0900"
         }
       ]
     },
@@ -2425,19 +2425,19 @@
       "large_cap": true,
       "news": [
         {
+          "title": "달바글로벌, 투자주의종목 지정→단기 주가변동성 경계",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16141799",
+          "pubDate": "Tue, 21 Jul 2026 20:34:00 +0900"
+        },
+        {
+          "title": "[공시] 손오공·엑시온그룹 '투자경고', 삼천당제약 '공매도 금지' 등.....",
+          "link": "https://www.newstnt.com/news/articleView.html?idxno=711093",
+          "pubDate": "Tue, 21 Jul 2026 20:28:00 +0900"
+        },
+        {
           "title": "&quot;저평가 소외주 잡을 때&quot;…베스트 애널이 꼽은 하반기 '반등 기대주'[20...",
           "link": "https://magazine.hankyung.com/business/article/202607082157b",
           "pubDate": "Tue, 21 Jul 2026 17:03:00 +0900"
-        },
-        {
-          "title": "달바글로벌 주가, 7월 21일 장중 237,000원 9.22% 상승",
-          "link": "https://www.joongangenews.com/news/articleView.html?idxno=534173",
-          "pubDate": "Tue, 21 Jul 2026 12:00:00 +0900"
-        },
-        {
-          "title": "&quot;K-뷰티 수출 호조&quot;...아모레퍼시픽 등 화장품주 '장중 활짝'",
-          "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=168468",
-          "pubDate": "Tue, 21 Jul 2026 11:54:00 +0900"
         }
       ]
     },
